@@ -42,4 +42,6 @@ Thumbs.db
 *.sass-cache*
 config.yml
 /_site
+/node_modules
+/bower_components
 assets/logo.png
