@@ -1,0 +1,51 @@
+{
+  "name": "craft-demo",
+  "version": "0.0.0",
+  "description": "Newism's Frontend Template",
+  "keywords": [],
+  "homepage": "http://newism.com.au",
+  "bugs": "https://github.com/newism/frontend-framework/issues",
+  "author": "James Nowland <james.nowland@newism.com.au> (http://newism.com.au)",
+  "contributors": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/newism/frontend-framework"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-autoprefixer": "^1.0.0",
+    "grunt-bower-install": "^1.6.0",
+    "grunt-concurrent": "^0.5.0",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-contrib-cssmin": "^0.10.0",
+    "grunt-contrib-imagemin": "^0.7.1",
+    "grunt-contrib-sass": "^0.7.3",
+    "grunt-contrib-uglify": "^0.5.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-dr-svg-sprites": "~0.9.9",
+    "grunt-liquid": "^2.0.0",
+    "grunt-modernizr": "^0.5.2",
+    "grunt-pagespeed": "^0.3.0",
+    "grunt-rev": "^0.1.0",
+    "grunt-shell": "^0.7.0",
+    "grunt-spritesmith": "^2.1.1",
+    "grunt-svgmin": "^0.4.0",
+    "grunt-text-replace": "~0.3.12",
+    "grunt-usemin": "^2.3.0",
+    "grunt-wiredep": "^1.8.0",
+    "jshint-stylish": "^0.4.0",
+    "load-grunt-tasks": "^0.6.0",
+    "localtunnel": "^1.3.0",
+    "ngrok": "^0.1.97",
+    "phantomjs": "~1.9.7-15",
+    "q": "^1.0.1",
+    "time-grunt": "^0.4.0"
+  },
+  "engines": {
+    "node": ">=0.10.28"
+  },
+  "private": true
+}

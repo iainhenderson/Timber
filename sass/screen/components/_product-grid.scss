@@ -1,0 +1,25 @@
+ /*============================================================================
+  #Product Grid and List Views
+==============================================================================*/
+.sold-out {
+
+}
+
+.on-sale {
+
+}
+
+.product-grid-item {
+  display: block;
+  text-decoration: none;
+}
+
+.product-grid-image {
+  display: block;
+  margin: 0 auto $gutter/2;
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+}

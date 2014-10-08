@@ -1,0 +1,35 @@
+/*============================================================================
+  #Product Page
+==============================================================================*/
+.product-variants {
+  display: none;
+
+  .no-js & {
+    display: block;
+  }
+}
+
+@include at-query($min, $large) {
+  .selector-wrapper,
+  .product-variants {
+    select {
+      max-width: 40%;
+    }
+  }
+}
+
+.product-photo-container {
+  margin-bottom: $gutter;
+}
+
+.product-photo-container,
+.product-photo-thumbs {
+  a, img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  li {
+    margin-bottom: $gutter;
+  }
+}

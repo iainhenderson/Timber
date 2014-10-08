@@ -3,7 +3,7 @@
 
 http_path = "/public"
 css_dir = "/public/styles"
-sass_dir = "../assets"
+sass_dir = "./"
 images_dir = "../images"
 javascripts_dir = "../assets"
 relative_assets = true
