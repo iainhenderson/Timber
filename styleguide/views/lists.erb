@@ -1,0 +1,21 @@
+<% pageSection 'UI Components' %>
+<% pageTitle 'Lists' %>
+
+<div class="styleguide-pageIntro styleguide-pageCopy">
+    <h1 class="styleguide-heading1"><%= @pageTitle %></h1>
+        <p>
+            Lists are Blocks of content that hold content in a list item i.e. <code>.List-item</code>. While they don't have to we generally use <code>&lt;ul&gt;</code> or <code>&lt;ol&gt;</code> html elements to do so.
+        </p>
+        <p>Lists styling located at: <code>screen/blocks/_lists.scss</code>.</p>
+    </p>
+</div>
+
+<% styleguide_block 'Pipe List' do %>
+<ul class="List $modifier_class">
+    <li class="List-item pad--horz4">List Item 1</li>
+    <li class="List-item pad--horz4">List Item 2</li>
+    <li class="List-item pad--horz4">List Item 3</li>
+    <li class="List-item pad--horz4">List Item 4</li>
+    <li class="List-item pad--horz4">List Item 5</li>
+</ul>
+<% end %>

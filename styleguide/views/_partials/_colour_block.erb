@@ -1,0 +1,26 @@
+<div class="styleguide-example styleguide-example-swatches">
+    <h3 id="<%= @section.section.delete(' ') %>">
+        <%= @section.section %>
+        <a href="#<%= @section.section.delete(' ') %>" class="styleguide-anchor">
+            <img src="styleguide/public/link.png" alt="">
+        </a>
+        <em><%= @section.filename %></em>
+    </h3>
+
+    <div class="styleguide-description styleguide-swatch-description">
+        <p><%= @section.description %></p>
+    </div>
+    <div class="styleguide-element styleguide-element-colours">
+        <% @section.modifiers.each do |modifier| %>
+        <div class="styleguide-swatch">
+            <div class="styleguide-swatch-canvas">
+                <span style="display:block; width:100px; height:100px; background-color:<%= modifier.description.split(';').first %>;"></span>
+            </div>
+            <p class="styleguide-swatch-values">
+                <span class="value"><%= modifier.class_name %></span><br/>
+                <span class="value"><%= modifier.description.split(';').first %></span>
+            </p>
+        </div>
+        <% end %>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+<% pageSection 'UI Components' %>
+<% pageTitle 'Progress Bars' %>
+
+<div class="styleguide-pageIntro styleguide-pageCopy">
+    <h1 class="styleguide-heading1"><%= @pageTitle %></h1>
+    <p>
+        How is this different to a form element? Is this read only?
+        Explain the context that this Component is used and the naming convension.
+    </p>
+    <p>
+        Progress bars differ from preloader generally are they give exact feedback.
+    </p>
+    <p>
+        Preloader styling is located at: <code>screen/blocks/_progressBars.scss</code>.
+    </p>
+</div>
+
+
+<% styleguide_block 'ProgressBar' do %>
+<div class="ProgressBar $modifier_class">
+    <span class="ProgressBar-meter" style="width:50%">
+        <span class="ProgressBar-meterLabel">50%</span>
+    </span>
+    <span class="ProgressBar-meter" style="width:25%">
+        <span class="ProgressBar-meterLabel">25%</span>
+    </span>
+    <span class="ProgressBar-meter" style="width:15%">
+        <span class="ProgressBar-meterLabel">15%</span>
+    </span>
+    <span class="ProgressBar-meter" style="width:10%">
+        <span class="ProgressBar-meterLabel">10%</span>
+    </span>
+</div>
+<% end %>

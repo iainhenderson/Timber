@@ -1,0 +1,60 @@
+<% pageSection 'Component Groups' %>
+<% pageTitle 'Site Header' %>
+
+<div class="styleguide-pageIntro styleguide-pageCopy">
+    <h1 class="styleguide-heading1"><%= @pageTitle %></h1>
+    <p>
+        Explain the context that this Component is used and the naming convension.
+    </p>
+</div>
+
+<% styleguide_block 'Site Header' do %>
+<div class="SiteHeader">
+    <div class="SiteHeader-container">
+        <ul class="SecondaryNav u-alignRight u-displayNone u-displayBlock@sm">
+            <li class="Nav-item">
+                <span class="Phone-CTA">Call Roadside Assistance</span>
+                <a href="" rel="tel" class="Link--call Link--white">1800 450 490</a>
+            </li>
+            <li class="Nav-item Nav-item--login">
+                <a href="#">Login <i class="Icon Icon--login margin--left2"></i></a>
+            </li>
+        </ul>
+
+        <div class="u-cf">
+            <a href="#" class="SiteHeader-branding">Club Evolution</a>
+            <a href="#" class="PrimaryNavToggle u-displayNone@md js-mobileMenuToggle $modifier_class" style="background-image:url('http://lorempixel.com/1600/800/transport/7')">
+                <span class="PrimaryNavToggle-overlay">
+                    <i class="PrimaryNavToggle-icon PrimaryNavToggle-icon--openIcon Icon Icon--menu-hamburger">Open Menu</i>
+                    <i class="PrimaryNavToggle-icon PrimaryNavToggle-icon--closeIcon Icon Icon--close-white">Close Menu</i>
+                </span>
+            </a>
+            <div class="SiteHeader-navContainer $modifier_class">
+                <div class="u-displayNone@sm pad--horz6">
+                    <hr class="Seperator Seperator--gradient u-clearRowOn">
+                    <a href="#" class="Button Button--white Button--hero with-icon Button--large ButtonIcon--phone margin--top10 margin--bottom7">Call Roadside Assistance <i class="ButtonIcon"></i></a>
+                    <a href="#" class="Button Button--skyBlue Button--hero with-icon Button--large ButtonIcon--lock margin--bottom10 margin--bottom7">Member login <i class="ButtonIcon"></i></a>
+                </div>
+
+                <ul class="PrimaryNav">
+                    <li class="Nav-item is-active">
+                        <a href="#">For Members</a>
+                        <ul class="PrimaryNav-secondTier">
+                            <li class="Nav-item"><a href="#">Find a Service Centre</a></li>
+                            <li class="Nav-item"><a href="#">Make a booking</a></li>
+                            <li class="Nav-item"><a href="#">Join</a></li>
+                            <li class="Nav-item"><a href="#">Competitions</a></li>
+                            <li class="Nav-item"><a href="#">News</a></li>
+                        </ul>
+                    </li>
+                    <li class="Nav-item is-active"><a href="#">For service centres</a></li>
+                    <li class="Nav-item"><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%= erb :componentElem_pageHeader, :layout => false %>
+
+<% end %>

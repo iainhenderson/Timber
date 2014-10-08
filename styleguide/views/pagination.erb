@@ -1,0 +1,50 @@
+<% pageSection 'UI Components' %>
+<% pageTitle 'Pagination' %>
+
+<div class="styleguide-pageIntro styleguide-pageCopy">
+    <h1 class="styleguide-heading1"><%= @pageTitle %></h1>
+    <p>
+        Pagination is used for such things as displaying a limited number of results on a page.
+    </p>
+    <p>
+        Located at: <code>screen/blocks/_pagination.scss</code>.
+    </p>
+</div>
+
+<% styleguide_block 'Pagination' do %>
+<ul class="Pagination List--inline1 List--shorterDivider $modifier_class">
+    <li class="List-item Type--colorGrey-base Type--weightBold pad--right6">Page 2 of 36</li>
+    <li class="List-item pad--horz2">
+        <a href="" class="Pagination-number">1</a>
+        <a href="" class="Pagination-number is-current">2</a>
+        <a href="" class="Pagination-number">3</a>
+        <span class="Pagination-hellips">&hellip;</span>
+        <a href="" class="Pagination-number">36</a>
+    </li>
+    <li class="List-item pad--left6">
+        <a href="#" class="Button Button--ghost3 Button--hero Button--small with-icon ButtonIcon--arrowBlue">Next <i class="ButtonIcon"></i></a>
+    </li>
+</ul>
+<% end %>
+
+
+<% styleguide_block 'Next and Previous Pagination' do %>
+
+<div class="PaginationBeside $modifier_class">
+    <a href="#" class="PaginationBeside-block PaginationBeside-block--prev">
+        <img src="http://lorempixel.com/60/60/people/5/" width="60" height="60" class="PaginationBeside-thumb PaginationBeside-thumb--prev" />
+        <span class="PaginationBeside-textBlock u-displayInlineBlock">
+            <span class="PaginationBeside-description Type--weightBold Type--size10">Previous article</span>
+            <span class="PaginationBeside-title">Congratulations to  Michelle Stacey!</span>
+        </span>
+    </a>
+    <a href="#" class="PaginationBeside-block PaginationBeside-block--next">
+        <span class="PaginationBeside-textBlock u-displayInlineBlock">
+            <span class="PaginationBeside-description Type--weightBold Type--size10">Next article</span>
+            <span class="PaginationBeside-title">Congratulations to  Michelle Stacey!</span>
+        </span>
+        <img src="http://lorempixel.com/60/60/people/5/" width="60" height="60" class="PaginationBeside-thumb PaginationBeside-thumb--next" />
+    </a>
+</div>
+
+<% end %>

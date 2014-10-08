@@ -1,0 +1,59 @@
+<% pageSection 'UI Components' %>
+<% pageTitle 'Mixins' %>
+
+<div class="styleguide-pageIntro styleguide-pageCopy">
+    <h1 class="styleguide-heading1"><%= @pageTitle %></h1>
+    <p>
+        Exaplain why. <code>screen/_utils.scss</code>.
+    </p>
+    <p>
+        Where the concepts come from, why we do this over extends.
+    </p>
+
+
+    <h2>Responsive Helpers</h2>
+
+    <hr>
+
+    <h3><code>@include breakpoint(){ }</code></h3>
+    <p>
+        This uses the same breakpoints that bootstrap provides and use a mobile first philosphy meaning that anything defined at a smaller size will be the same at a bigger size.
+    </p>
+
+    <ul>
+        <li><code>@include breakpoint(xs){}</code> - default 480px and up</li>
+        <li><code>@include breakpoint(sm){}</code> - default 768px and up</li>
+        <li><code>@include breakpoint(md){}</code> - default 992px and up</li>
+        <li><code>@include breakpoint(lg){}</code> - default 1200px and up</li>
+    </ul>
+
+    <p>
+        Use cases when we don't go mobile first: Mobile menus that are dramatically different to the other one.
+    </p>
+
+    <ul>
+        <li><code>@include breakpoint(max-md){}</code> - only 992px or less</li>
+    </ul>
+
+    <hr>
+
+    <h3><code>@include sprite($sprite)</code></h3>
+
+    <ul>
+        <li><code>@include sprite($sprite)</code> -   All properties for the sprite</li>
+        <li><code>@include sprite-image($sprite)</code> -  The background image</li>
+        <li><code>@include sprite-position($sprite)</code> -  The background position</li>
+        <li><code>@include sprite-width($sprite)</code> -  The  sprite width</li>
+        <li><code>@include sprite-height($sprite)</code> -  The  sprite  height</li>
+        <li><code>@mixin spriteCenterInContainer($sprite, $container-width, $container-height, $nudget-x: 0, $nudget-y: 0 )</code> - Offset sprite inside a container</li>
+    </ul>
+
+
+    <hr>
+
+    <h3>Debugging.</h3>
+    <ul>
+        <li><code>@include responsiveBody</code> - A Debugging utilities. Inject debug into the body to see the current size.</li>
+    </ul>
+
+</div>

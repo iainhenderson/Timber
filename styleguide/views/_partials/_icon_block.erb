@@ -1,0 +1,38 @@
+<div class="styleguide-example styleguide-example-swatches">
+    <h3 id="<%= @section.section.delete(' ') %>">
+        <%= @section.section %>
+        <a href="#<%= @section.section.delete(' ') %>" class="styleguide-anchor">
+            <img src="styleguide/public/link.png" alt="">
+        </a>
+        <em><%= @section.filename %></em>
+    </h3>
+
+    <div class="styleguide-description styleguide-swatch-description">
+        <p><%= @section.description %></p>
+    </div>
+    <div class="styleguide-element">
+        <% @section.modifiers.each do |modifier| %>
+        <div class="styleguide-swatch">
+            <div class="styleguide-swatch-canvas">
+                <%= @example_html.gsub('$modifier_class', modifier.class_name) %>
+            </div>
+            <div class="styleguide-swatch-canvas" style="background: #fff;">
+                <%= @example_html.gsub('$modifier_class', modifier.class_name) %>
+            </div>
+            <div class="styleguide-swatch-canvas" style="background: #000;">
+                <%= @example_html.gsub('$modifier_class', modifier.class_name) %>
+            </div>
+            <p class="styleguide-swatch-values">
+                <span class="value">.<%= modifier.class_name %></span><br/>
+            </p>
+        </div>
+        <% end %>
+    </div>
+</div>
+
+<script type="application/javascript">
+    $('.styleguide-swatch-values .value').each(function(){
+        var class_name = $(this).text();
+        $(this).text(class_name.replace(/ pseudo-class-/g, ':'));
+    });
+</script>

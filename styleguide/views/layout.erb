@@ -1,0 +1,43 @@
+<% clientName 'Hello World' %>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title><%= @pageTitle %> : <%= @clientName %> Styleguide</title>
+    <link rel="stylesheet" href="/styleguide/public/layout.css" type="text/css"/>
+    <script src="/styleguide/public/jquery-2.0.3.min.js" ></script>
+    <link rel="stylesheet" href="styles/screen.css" type="text/css"/>
+    <link rel="shortcut icon" href="/styleguide/public/favicon.ico?v=1" />
+    <link rel="stylesheet" href="/bower_components/prism/themes/prism.css" type="text/css"/>
+    <link  href="/bower_components/prism/plugins/line-numbers/prism-line-numbers.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body class="styleguide-Body styleguide-section-<%= @pageSection.delete(' ') %> styleguide-page-<%= @pageTitle.delete(' ') %>">
+
+<div class="styleguide-Bar">
+    <h6 class="styleguide-Bar-pageTitle js-styleguide-NavToggle"><span class="styleguide-Bar-hamburger"></span> <%= @pageSection %> &rsaquo; <%= @pageTitle %> <span class="styleguide-Bar-siteName"> &rsaquo; <%= @clientName %></span></h6>
+</div>
+
+<div class="styleguide-Nav js-styleguide-nav">
+    <%= erb :styleguide_navigation, :layout => false %>
+</div>
+
+<div class="styleguide-Content js-styleguide-Content">
+    <%= yield %>
+</div>
+
+
+<!-- /#wrapper -->
+
+<!-- highlight out codez -->
+<script src="/bower_components/prism/prism.js" data-manual></script>
+<!-- and add some line numbers -->
+<script src="/bower_components/prism/plugins/line-numbers/prism-line-numbers.js"></script>
+
+
+<script src="/styleguide/public/kss.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,242 @@
+<% pageSection 'Design Elements' %>
+<% pageTitle 'Typography' %>
+
+<div class="styleguide-pageIntro styleguide-pageCopy">
+    <h1 class="styleguide-heading1"><%= @pageTitle %></h1>
+    <p>
+        We achieve styling through opt in classes and do not style elements globally. This is to reduced the number of style collisions across projects. Elements can inherit styles from <code>.copy</code> or otherwise applied directly.
+    </p>
+    <p>
+        To seperate styling from schematics our heading class can easily be styled with classes:
+    </p>
+        <code>h1,.heading1 {}</code>, <code>h2,.heading2 {}</code>, <code>h3,.heading3 {}</code>, <code>h4,.heading4 {}</code>, <code>h5,.heading5 {}</code>,<code>h6,.heading6 {}</code>
+    </p>
+
+    <ul>
+        <li>
+            <a href="#TypographyColours">Typography Colours</a>
+        </li>
+        <li>
+            <a href="#TypographySizes">Typography Sizes</a>
+        </li>
+        <li>
+            <a href="#TypographyWeight">Typography Weight</a>
+        </li>
+        <li>
+            <a href="#UserTypography">User Typography</a>
+        </li>
+    </ul>
+
+
+</div>
+
+<% styleguide_block 'Typography Design' do %>
+<div class="copy1 copy--featuredParagraph" style="max-width:625px; margin:1em auto;">
+    <span class="styleguide-TypographyDescription">headers with copy</span>
+    <span class="styleguide-TypographyDescription">H1 - Open Sans light: 69px(font size)/75px(line height)</span>
+    <h1>H1 - Donec id elit non tmi porta eges tasvulpu gravida.</h1>
+    <span class="styleguide-TypographyDescription">Body Featured - Open Sans regular: 18px/27px</span>
+
+    <p><strong>Body Featured - </strong>Donec ullamcorper nulla non metus auctor fringilla. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur blandit tempus porttitor. Donec id elit non mi porta gravida  at eget metus Donec id elit.</p>
+
+    <span class="styleguide-TypographyDescription">H2 - Open Sans light: 42px/52px</span>
+
+    <h2>H2 - Donec id elit non mi porta gravida at eget metus. Vivamus faucibus auctor.</h2>
+
+    <span class="styleguide-TypographyDescription">Body default- Open Sans regular: 15px/24px</span>
+
+    <p><strong>Body -</strong> Donec ullamcorper nulla non metus auctor fringilla. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Cum sociis natoque penatibus et magnis dis parturient montes, <a href="#">nascetur ridiculus mus</a>. Curabitur blandit tempus porttitor. Donec id elit non mi porta gravida at eget.</p>
+
+    <p>Sed posuere consectetur est at lobortis. Etiam porta sem malesuada magna mollis facilisis in, egestas eget quam. Vivamus sagittis <a href="#">lacus vel augue laoreet</a> rutrum faucibus ut fermentum massa justo sit amet risus. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+
+    <p>Cras mattis consectetur purus sit amet fermentum. Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui. Praesent commodo cursus magna, vel scelerisque nascetur ridiculus mus. Maecenas faucibus mollis interdum.</p>
+
+    <span class="styleguide-TypographyDescription">H3 - Open Sans light: 30px/42px</span>
+
+    <h3>H3 - Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</h3>
+    <p>Body - Donec ullamcorper nulla non metus auctor fringilla. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Cum sociis blandit tempus porttitor. Donec id elit non mi porta gravida at eget metus.</p>
+
+    <span class="styleguide-TypographyDescription">H4 - Open Sans Bold: 24px/33px</span>
+
+    <h4>H4 - Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Maecenas sed diam eget risus varius blandit non magna.</h4>
+
+    <span class="styleguide-TypographyDescription">H5 - Open Sans Bold: 21px/30px</span>
+
+    <h5>H5 - Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</h5>
+    <p>Body - Donec ullamcorper nulla non metus auctor fringilla. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+
+    <span class="styleguide-TypographyDescription">Section Title - Open Sans light: 60px/66px</span>
+
+    <h1 class="Type--sectionTitle">Vestibulum id ligula porta felis justo euismod semper.</h1>
+
+    <p>Body - Donec ullamcorper nulla non metus auctor fringilla. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.</p>
+
+    <span class="styleguide-TypographyDescription">Section sub Title - Open Sans Bold: 21px/30px</span>
+
+    <h2 class="Type--sectionSubTitle">
+        Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum diam eget risus dolor sit amet, consectetur adipiscing elit.
+    </h2>
+    <p><strong>Body -</strong> Donec <em>ullamcorper</em> nulla non metus auctor fringilla. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.</p>
+
+    <ul>
+        <li>Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</li>
+        <li>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nulla vitae elit libero, a pharetra augue. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</li>
+        <li>Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus vitae elit libero, a pharetra augue.</li>
+    </ul>
+
+    <ol>
+        <li>Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</li>
+        <li>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nulla vitae elit libero, a pharetra augue. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</li>
+        <li>Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus vitae elit libero, a pharetra augue.</li>
+    </ol>
+
+    <span class="styleguide-TypographyDescription">Body Small - Open Sans regular: 13px/21px</span>
+
+    <p class="Type--small">Body Small - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper nulla non metus auctor fringilla. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Maecenas</p>
+</div>
+<% end %>
+
+<% styleguide_block 'Typography Colours' do %>
+
+<p class="$modifier_class">
+    Lorem ipsum dolor sit amet, <strong>consectetur adipisicing</strong> elit.
+    Beatae deserunt fugit maiores? Accusamus ad adipisci aspernatur at
+    eveniet exercitationem harum labore minus modi <em>nihil placeat</em> quo,
+    reiciendis rerum unde voluptate!
+</p>
+<% end %>
+
+<% styleguide_block 'Typography Sizes' do %>
+
+<p class="$modifier_class">
+    Lorem ipsum dolor sit amet, <strong>consectetur adipisicing</strong> elit.
+    Beatae deserunt fugit maiores? Accusamus ad adipisci aspernatur at
+    eveniet exercitationem harum labore minus modi <em>nihil placeat</em> quo,
+    reiciendis rerum unde voluptate!
+</p>
+<% end %>
+
+<% styleguide_block 'Typography Weight' do %>
+
+<p class="$modifier_class">
+    Lorem ipsum dolor sit amet, <strong>consectetur adipisicing</strong> elit.
+    Beatae deserunt fugit maiores? Accusamus ad adipisci aspernatur at
+    eveniet exercitationem harum labore minus modi <em>nihil placeat</em> quo,
+    reiciendis rerum unde voluptate!
+</p>
+<% end %>
+
+
+
+<% styleguide_block 'User Typography' do %>
+
+<div class="$modifier_class">
+    <h1>HTML Ipsum Presents</h1>
+
+    <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em>.</p>
+    <p>turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+
+    <h2>Header Level 2</h2>
+    <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+    <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+    <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+
+    <ol>
+       <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+       <li>Aliquam tincidunt mauris eu risus. Aliquam tincidunt mauris eu risus. Aliquam tincidunt mauris eu risus. Aliquam tincidunt mauris eu risus. Aliquam tincidunt mauris eu risus.</li>
+    </ol>
+
+    <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+
+    <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
+
+    <h3>Header Level 3</h3>
+        <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+        <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+
+    <ul>
+       <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, excepturi, nam unde voluptates iste aperiam eaque sit architecto necessitatibus quis consequatur aliquam pariatur tempora maiores omnis voluptate commodi laborum dicta!</li>
+       <li>Aliquam tincidunt mauris eu risus.</li>
+    </ul>
+
+    <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+    <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+
+    <h4>Header Level 4</h4>
+    <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+    <h5>Header Level 5</h5>
+    <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+    <h6>Header Level 6</h6>
+    <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+
+    <pre><code>
+    #header h1 a {
+        display: block;
+        width: 300px;
+        height: 80px;
+    }
+    </code></pre>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, quas, natus, corporis, harum qui enim obcaecati est omnis quisquam ratione animi laborum reiciendis! Ab, officiis assumenda similique doloribus commodi sunt!</p>
+    <dl>
+       <dt>Definition list</dt>
+       <dd>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+    commodo consequat.</dd>
+       <dt>Lorem ipsum dolor sit amet</dt>
+       <dd>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+    commodo consequat.</dd>
+    </dl>
+    <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Order No.</th>
+                <th scope="col">Order Date</th>
+                <th scope="col">Items</th>
+                <th scope="col">TH</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">56663</th>
+                <td>TD</td>
+                <td>TD</td>
+                <td>TD</td>
+            </tr>
+            <tr>
+                <th scope="row">56663</th>
+
+                <td>TD</td>
+                <td>TD</td>
+                <td>TD</td>
+            </tr>
+            <tr>
+                <th scope="row">56663</th>
+
+                <td>TD</td>
+                <td>TD</td>
+                <td>TD</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th scope="row">Lorem ipsum dolor sit amet</th>
+                <td>TD</td>
+                <td>TD</td>
+                <td>TD</td>
+            </tr>
+            <tr>
+                <th scope="row">TH</th>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing.</td>
+                <td>TD</td>
+                <td>TD</td>
+            </tr>
+        </tfoot>
+    </table>
+
+</div>
+<% end %>

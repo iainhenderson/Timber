@@ -1,0 +1,65 @@
+<% pageSection 'UI Components' %>
+<% pageTitle 'Tables' %>
+
+<div class="styleguide-pageIntro styleguide-pageCopy">
+    <h1 class="styleguide-heading1"><%= @pageTitle %></h1>
+    <p>
+        Tables are for holding tabular data.
+    </p>
+    <p>
+        Table Styling is located in <code>screen/blocks/_table.scss</code>
+    </p>
+</div>
+
+<% styleguide_block 'Table' do %>
+<table class="Table $modifier_class">
+    <thead>
+        <tr>
+            <th scope="col">TH</th>
+            <th scope="col">TH</th>
+            <th scope="col">TH</th>
+            <th scope="col">TH</th>
+        </tr>
+        <tr>
+            <th scope="row">TH</th>
+            <td>TD</td>
+            <td>TD</td>
+            <td>TD</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">TH</th>
+            <td>TD</td>
+            <td>TD</td>
+            <td>TD</td>
+        </tr>
+        <tr>
+            <th scope="row">TH</th>
+            <td>TD</td>
+            <td>TD</td>
+            <td>TD</td>
+        </tr>
+        <tr>
+            <th scope="row">TH</th>
+            <td>TD</td>
+            <td>TD</td>
+            <td>TD</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th scope="row">Lorem ipsum dolor sit amet</th>
+            <td>TD</td>
+            <td>TD</td>
+            <td>TD</td>
+        </tr>
+        <tr>
+            <th scope="row">TH</th>
+            <td>Lorem ipsum dolor sit amet, consectetur adipisicing.</td>
+            <td>TD</td>
+            <td>TD</td>
+        </tr>
+    </tfoot>
+</table>
+<% end %>

@@ -1,0 +1,32 @@
+<% pageSection 'UI Components' %>
+<% pageTitle 'Panels' %>
+
+<div class="styleguide-pageIntro styleguide-pageCopy">
+    <h1 class="styleguide-heading1"><%= @pageTitle %></h1>
+    <p>
+        Panels are a generic group of content that looks visually different.
+    </p>
+    <p>
+        Panel styling is located at: <code>screen/blocks/_panel.scss</code>.
+    </p>
+</div>
+
+<% styleguide_block 'Panel' do %>
+<div class="Panel $modifier_class">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="Panel-header">
+                    <h2 class="Panel-title Type--size1">Panel Title</h2>
+                </div>
+                <div class="Panel-body Type--size7">
+                    <p><strong>All across Australia, we’ve got you covered.</strong> Simply add your post code or suburb and find your nearest authorized club evolution service centre and start to enjoy the benefits.</p>
+                </div>
+                <div class="Panel-footer">
+                    Panel Footer Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<% end %>

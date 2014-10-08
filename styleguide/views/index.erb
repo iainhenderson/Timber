@@ -1,0 +1,28 @@
+<% pageSection 'Home' %>
+<% pageTitle 'Welcome' %>
+<!-- <meta http-equiv="refresh" content="0; url=/colours" /> -->
+
+<div class="Styleguide-homepage">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12" style="margin-bottom:5em;">
+
+                <div class="styleguide-pageIntro styleguide-pageCopy">
+                    <h1 class="styleguide-heading1"><%= @pageTitle %> to <%= @clientName %> Styleguide</h1>
+                    <p>This document contains a collection of common HTML markup used for demonstrating styles that are used through out this site.</p>
+
+                    <p><strong>Aims:</strong></p>
+                    <ul>
+                        <li>Establish Common Design Language</li>
+                        <li>Easy to onboard any new devs</li>
+                        <li>Speed Up Dev Time</li>
+                        <li>Modular Isolated Testing</li>
+                    </ul>
+                </div>
+
+                <h1 style="margin:1.2em 0; font-size:2em;">Navigation</h1>
+                <%= erb :styleguide_navigation, :layout => false %>
+            </div>
+        </div>
+    </div>
+</div>

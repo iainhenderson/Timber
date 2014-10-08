@@ -1,0 +1,206 @@
+<% pageSection 'UI Components' %>
+<% pageTitle 'Forms' %>
+
+<div class="styleguide-pageIntro styleguide-pageCopy">
+    <h1 class="styleguide-heading1"><%= @pageTitle %></h1>
+    <p>
+        These components are the basic building blocks for creating forms. Each of these elements can be used individually throughout the site.
+    </p>
+    <p>
+        Located at: <code>screen/blocks/_forms.scss</code>.
+    </p>
+    <p>
+        <strong>Forms are broken into:</strong>
+    </p>
+    <ul>
+        <li>
+            <a href="#TextInput">Basic Control Inputs</a>
+        </li>
+        <li>
+            <a href="#Control">Control Groups Components</a>
+        </li>
+        <li>
+            <a href="#DesignedForm">Form Examples</a>
+        </li>
+    </ul>
+</div>
+
+<% styleguide_block 'Text Input' do %>
+    <input class="ControlInput $modifier_class "
+           type="text"
+           value=""
+           />
+
+    <input class="ControlInput $modifier_class "
+           type="text"
+           placeholder="e.g $modifier_class Placeholder"/>
+
+    <input class="ControlInput $modifier_class "
+           type="text"
+           value="e.g $modifier_class with Content"
+           />
+<% end %>
+
+<% styleguide_block 'Text Area' do %>
+    <textarea class="ControlInput $modifier_class"></textarea>
+    <textarea class="ControlInput $modifier_class" placeholder="e.g $modifier_class Placeholder"></textarea>
+    <textarea class="ControlInput $modifier_class" placeholder="e.g $modifier_class Placeholder">Example of a text area with actual content inside of it.</textarea>
+<% end %>
+
+<% styleguide_block 'Password Input' do %>
+<input class="ControlInput $modifier_class "
+       type="password"
+       />
+
+<input class="ControlInput $modifier_class "
+       type="password"
+       placeholder="e.g $modifier_class Placeholder"/>
+
+<input class="ControlInput $modifier_class "
+       type="password"
+       value="e.g $modifier_class with Content"
+       />
+<% end %>
+
+<% styleguide_block 'Checkbox Input' do %>
+    <input id="example1-$modifier_class" type="checkbox" class="ControlInput ControlInput--checkbox $modifier_class" />
+    <label for="example1-$modifier_class">This is an example.</label>
+<% end %>
+
+<% styleguide_block 'Radio Options' do %>
+    <input id="example3-$modifier_class" type="radio" name="radio-example" class="ControlInput ControlInput--radio $modifier_class" /><label for="example3-$modifier_class">Example One</label>
+    <input id="example4-$modifier_class" type="radio" name="radio-example" class="ControlInput ControlInput--radio $modifier_class" checked /><label for="example4-$modifier_class">Example Two</label>
+<% end %>
+
+<% styleguide_block 'Select Input' do %>
+    <select class="ControlInput ControlInput--select $modifier_class">
+        <option></option>
+        <option value="1">ControlInput ControlInput--select</option>
+        <option value="2">ControlInput ControlInput--select</option>
+        <optgroup label="Option Group">
+            <option value="3">ControlInput ControlInput--select</option>
+            <option value="4">ControlInput ControlInput--select</option>
+        </optgroup>
+    </select>
+
+    <select class="ControlInput ControlInput--select $modifier_class" multiple>
+        <option value="1">ControlInput ControlInput--select</option>
+        <option value="2">ControlInput ControlInput--select</option>
+        <optgroup label="Option Group">
+            <option value="3">ControlInput ControlInput--select</option>
+            <option value="4">ControlInput ControlInput--select</option>
+        </optgroup>
+    </select>
+<% end %>
+
+<!-- End Input Types -->
+
+<!-- Start Control Groups -->
+<% styleguide_block 'Control' do %>
+<div class="Control $modifier_class">
+    <label class="Control-label">Control Label</label>
+    <div class="Control-description">Control Description Example.</div>
+    <input class="ControlInput ControlInput--text" type="text" placeholder="ControlInput Placeholder"/>
+</div>
+<% end %>
+
+<% styleguide_block 'Control Group Example' do %>
+<div class="ControlGroup $modifier_class">
+    <div class="ControlGroup-label">
+        ControlGroup Label
+        <span class="required-flag">*</span>
+    </div>
+    <div class="ControlGroup-instructions">
+        ControlGroup Instructions
+    </div>
+    <div class="ControlGroup-controls">
+        <div class="Control is-required">
+            <div class="Control-label">Credit Card</div>
+            <input class="ControlInput ControlInput--text" type="text" placeholder="e.g 4017 XXX XXXX"/>
+        </div>
+        <div class="Control is-required">
+            <div class="Control-label">CC</div>
+            <input class="ControlInput ControlInput--text" type="text" placeholder="123"/>
+        </div>
+    </div>
+</div>
+<% end %>
+
+<% styleguide_block 'Designed Form' do %>
+<div class="Form row $modifier_class" style="margin:10px auto; max-width:615px;">
+    <div class="ControlGroup">
+        <div class="col-sm-6">
+            <div class="Control is-required">
+                <label class="Control-label">Name</label>
+                <input class="ControlInput ControlInput--text" type="text" />
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="Control is-required">
+                <label class="Control-label">Email</label>
+                <input class="ControlInput ControlInput--text" type="email" />
+                <label class="Control-description">Please Enter an email address</label>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="Control is-required">
+                <label class="Control-label">Address</label>
+                <input class="ControlInput ControlInput--text" type="email" />
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="Control is-required is-invalid">
+                <label class="Control-label">Postcode</label>
+                <input class="ControlInput ControlInput--text" type="email" />
+                <label class="Control-description">Please Enter a postcode </label>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="Control">
+                <label class="Control-label">State</label>
+                <select class="ControlInput ControlInput--text ControlInput--select">
+                    <option></option>
+                    <option value="1">ControlInput ControlInput--select</option>
+                    <option value="2">ControlInput ControlInput--select</option>
+                    <optgroup label="Option Group">
+                        <option value="3">ControlInput ControlInput--select</option>
+                        <option value="4">ControlInput ControlInput--select</option>
+                    </optgroup>
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="Control">
+                <label class="Control-label">State</label>
+                <select class="ControlInput ControlInput--text ControlInput--select">
+                    <option></option>
+                    <option value="1">ControlInput ControlInput--select</option>
+                    <option value="2">ControlInput ControlInput--select</option>
+                    <optgroup label="Option Group">
+                        <option value="3">ControlInput ControlInput--select</option>
+                        <option value="4">ControlInput ControlInput--select</option>
+                    </optgroup>
+                </select>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="Control">
+                <label for="#" class="Control-label">Description</label>
+                <textarea class="ControlInput ControlInput--text ControlInput--textarea"
+                          rows="10">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit tempus porttitor.</textarea>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-8">
+        <div class="Control Control--verticalInputs">
+            <input id="styleguide-remember" type="checkbox" class="ControlInput ControlInput--checkbox" /><label for="styleguide-remember">Remember my personal information</label>
+            <input id="styleguide-notify" type="checkbox" class="ControlInput ControlInput--checkbox" /><label for="styleguide-notify">Notify me of follow-up comments</label>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="Form-actions">
+            <button class="Button">Submit</button>
+        </div>
+    </div>
+</div>
+<% end %>

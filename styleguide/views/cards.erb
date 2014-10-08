@@ -1,0 +1,70 @@
+<% pageSection 'UI Components' %>
+<% pageTitle 'Cards' %>
+
+
+<div class="styleguide-pageIntro styleguide-pageCopy">
+    <h1 class="styleguide-heading1"><%= @pageTitle %></h1>
+    <p>Cards are small blocks of content that contain generally a small amount of content.</p>
+    <p>Cards are very modular.</p>
+    <p>
+        Cards Styling is located in <code>screen/blocks/_cards.scss</code>
+    </p>
+</div>
+
+
+<% styleguide_block 'Card' do %>
+<div class="Card $modifier_class">
+    <div class="Card-header">
+        <h3 class="Card-title">Card Title</h3>
+    </div>
+    <div class="Card-body">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Aliquid ducimus facilis inventore ipsum officiis rem reprehenderit ullam?
+        Atque cum debitis dolorem earum expedita qui ullam ut.
+        Consequatur laborum perferendis saepe.
+    </div>
+    <div class="Card-footer"></div>
+</div>
+
+<div class="Card $modifier_class">
+    <div class="Card-faces">
+        <div class="Card-front">
+            <div class="Card-header">
+                <h3 class="Card-title">Card Front</h3>
+            </div>
+            <div class="Card-body">
+                <button onclick="$(this).closest('.Card').toggleClass('Card--flipped', true);">Flip</button>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aperiam aspernatur beatae
+                    corporis delectus dignissimos dolore ea eligendi, eos et fugiat incidunt labore laudantium minus
+                    omnis praesentium quidem quisquam, repudiandae.
+                </p>
+            </div>
+            <div class="Card-footer">
+            </div>
+        </div>
+        <div class="Card-back">
+            <div class="Card-header">
+                <h3 class="Card-title">Card Back</h3>
+            </div>
+            <div class="Card-body">
+                <button onclick="$(this).closest('.Card').toggleClass('Card--flipped', false);">Flip</button>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aperiam aspernatur beatae
+                    corporis delectus dignissimos dolore ea eligendi, eos et fugiat incidunt labore laudantium minus
+                    omnis praesentium quidem quisquam, repudiandae.
+                </p>
+                <p>Debitis illo incidunt quo tempora? Culpa enim ipsam iste maxime non, obcaecati porro quibusdam
+                    recusandae reprehenderit voluptates! Ab at deserunt, doloribus, eveniet fuga impedit itaque nostrum
+                    omnis quae quam rem.
+                </p>
+                <p>Corporis et hic nisi quidem. Blanditiis cupiditate dicta id maiores mollitia pariatur provident
+                    quaerat rem. Consequuntur dicta facilis hic laborum minus, praesentium quam vel? Amet atque id
+                    possimus quam velit!
+                </p>
+            </div>
+            <div class="Card-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+<% end %>

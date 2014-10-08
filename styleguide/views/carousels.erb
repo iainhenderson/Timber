@@ -1,0 +1,44 @@
+<% pageSection 'UI Components' %>
+<% pageTitle 'Carousels' %>
+
+<div class="styleguide-pageIntro styleguide-pageCopy">
+    <h1 class="styleguide-heading1"><%= @pageTitle %></h1>
+    <p>
+        Carousel allows you to show slideshow galleries of photosand other content.
+    </p>
+    <p>
+        <em>Note: Requires javascript</em>
+    </p>
+</div>
+
+<% styleguide_block 'Carousel' do %>
+<ul class="Carousel js-Carousel">
+    <li class="Carousel-item">
+        <img src="http://lorempixel.com/600/500/nature/1/"
+             width="600"
+             height="500"
+             alt="Example Image 1"
+             class="Carousel-image"
+        />
+    </li>
+    <li class="Carousel-item">
+        <img src="http://lorempixel.com/600/500/nature/2/"
+             width="600"
+             height="500"
+             alt="Example Image 2"
+             class="Carousel-image"
+        />
+    </li>
+    <li class="Carousel-item">
+        <img src="http://lorempixel.com/600/500/nature/3/"
+             width="600"
+             height="500"
+             alt="Example Image 3"
+             class="Carousel-image"
+        />
+    </li>
+</ul>
+<% end %>
+
+
+

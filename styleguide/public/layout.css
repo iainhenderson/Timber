@@ -1,0 +1,556 @@
+/*
+ * Note
+ * ==========================================
+ * All CSS Styles are prefixed with styleguide.
+ *
+ * This is done to avoide name collisions
+ *
+*/
+
+/* Remove any styling on the body tag */
+
+body.styleguide-Body {
+    background: none;
+    padding: 0 !important;
+    margin: 50px 0 0 0 !important; /* 50px sets off the fixed nav */
+}
+
+/*----------------------------------------------------------------------------
+  @group Styleguide Styles
+----------------------------------------------------------------------------*/
+
+h1.styleguide {
+    margin: 0 0 -5px 0;
+    font-size: 24px;
+    color: #000;
+}
+
+.styleguide-description {
+    padding: 20px;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.styleguide-description p {
+    white-space: pre-line;
+    margin:0;
+}
+
+/*
+.styleguide-modifiers {
+}
+*/
+
+.styleguide-modifiers li strong {
+    font-family: Monaco, monospace;
+    font-weight: normal;
+    color: #222;
+    font-size:85%
+}
+
+.styleguide-example {
+    margin: 0 0 15px 0;
+    background: rgba(255, 255, 255, 1);
+}
+
+.styleguide-example > h3 {
+    margin: 0;
+    padding: 5px;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    background: #333;
+    border-top: 1px solid #000;
+}
+
+.styleguide-example > h3 em {
+    float: right;
+    text-transform: none;
+    font-style: normal;
+    font-weight: normal;
+    color: #999;
+}
+
+.styleguide-example > h3 .styleguide-anchor {
+    float:right;
+    margin-left: 12px;
+}
+
+.styleguide-example .styleguide-element {
+    overflow: hidden;
+    position: relative;
+}
+
+.styleguide-example .styleguide-element-colours {
+    padding:1em 1.6em;
+}
+
+.styleguide-example .styleguide-element + .styleguide-element {
+    border-top: 1px solid #eee;
+}
+
+.styleguide-example .styleguide-element .styleguide-modifier-name {
+    display: block;
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    padding: 5px 8px;
+    font-family: sans-serif;
+    font-size: 11px;
+    color: rgba(0,0,0,.5);
+    background: rgba(0,0,0,.05);
+    border-top: none;
+    z-index:1
+}
+
+.styleguide-example .styleguide-html {
+    padding: 5px 10px;
+    background: #edf6f8;
+    border-top: 1px solid #dde7ea;
+    overflow: auto;
+    margin:0;
+    font-size:12px;
+}
+
+.styleguide-example .styleguide-html .highlight {
+    background: none;
+}
+
+.styleguide-example-swatches {
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+.styleguide-swatch {
+    display:inline-block;
+    margin-right: 20px;
+}
+
+.styleguide-swatch-canvas {
+    background: url('alpha.png') center center;
+    display:inline-block;
+    padding: 8px;
+    text-align: center;
+}
+
+/* As we use "i" Icons this rule just breaks stuff.
+.styleguide-swatch-canvas > span {
+    display: block;
+    height: 120px;
+    width: 120px;
+    -webkit-border-radius: 25%;
+    -moz-border-radius: 25%;
+    -o-border-radius: 25%;
+    border-radius: 25%;
+}
+*/
+
+.styleguide-swatch-values {
+    margin-top: 5px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.styleguide-swatch .type {
+    color: #979da2;
+}
+
+.styleguide-Nav {
+    background:white;
+    box-shadow:2px 0 9px rgba(0,0,0,0.6);
+    position: fixed;
+    left:-210px;
+    opacity:0;
+    width:200px;
+    top:50px;
+    bottom:0;
+    overflow-y: scroll;
+    z-index:9;
+    padding-bottom:20px;
+}
+.styleguide-Nav.is-active {
+    left:0;
+    opacity:1;
+}
+
+.styleguide-Nav-heading {
+   padding:8px 16px;
+   margin:30px 0 0 0;
+   font-size:12px;
+   text-transform: uppercase;
+   background:#f2f2f2;
+   color:#999;
+   border-bottom:1px solid #ddd;
+}
+.styleguide-Nav-heading:first-child {
+    margin-top:0;
+}
+
+.styleguide-Nav-list a {
+    display: block;
+    padding:8px 16px;
+    border-bottom:1px solid #f2f2f2;
+}
+
+.styleguide-Bar {
+    position: fixed;
+    top:0;
+    width:100%;
+    background:#111;
+    background: linear-gradient(to bottom, #444 0%,#222 100%); /* W3C */
+    color:white;
+    z-index:10;
+    padding:16px 16px;
+    min-height: 50px;
+}
+
+.styleguide-Bar-pageTitle {
+    color:white;
+    cursor:pointer;
+    line-height: 1.25;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.styleguide-Bar-siteName {
+    color: #888;
+    font-weight: 400;
+}
+
+.styleguide-Bar-hamburger {
+    display:inline-block;
+    content: "";
+    width: 16px;
+    height: 0;
+    position: relative;
+    top:-22px;
+    margin-right:8px;
+    box-shadow: 0 10px 0 1px #fff,0 16px 0 1px #fff,0 22px 0 1px #fff;
+}
+
+.styleguide-Content {
+    background:white;
+}
+
+.styleguide-Content.is-dimmed {
+    -webkit-filter: brightness(90%);
+}
+
+.styleguide-TypographyDescription {
+    color:#bac4d0;
+    display:block;
+    text-transform: uppercase;
+    letter-spacing:0.035em;
+    font-weight:300;
+}
+
+/* KSS Module Typography Class */
+.styleguide-pageCopy {
+    margin:2em 0;
+}
+
+.styleguide-pageCopy code {
+    border: 1px solid #ffae00;
+    background-color: #FFF1D4;
+    padding:0.12em 0.2em;
+    border-radius: 7px;
+}
+
+/* KSS Heading Typograhy*/
+
+.styleguide-heading1{
+    color: #000;
+    margin:0.3em 0;
+    font-size: 2.4em;
+}
+
+.styleguide-pageIntro {
+    padding:1em;
+    max-width:70em;
+}
+
+
+/* Code Block
+  ---------------------------------------------------------------------------*/
+.styleguide-codeblock {
+    max-height: inherit;
+}
+
+.styleguide-codeblock.styleguide-code-is-collapsed {
+    max-height:114px;
+}
+
+.styleguide-codeblock-button {
+    border-top:1px solid #eaeaea;
+    border-bottom:1px solid #eaeaea;
+    cursor: pointer;
+    color: #009dd9;
+    font-weight: bold;
+    display:none;
+    padding:0.3em 0;
+    text-align:center;
+    margin: -0.5em auto 0;
+}
+
+.styleguide-codeblock-button:hover {
+    color: #905;
+}
+
+.styleguide-codeblock-button-close {
+    display: none;
+}
+
+.styleguide-codeblock-button.styleguide-code-is-collapsed .styleguide-codeblock-button-expand {
+    display:none;
+}
+
+.styleguide-codeblock-button.styleguide-code-is-collapsed .styleguide-codeblock-button-close {
+    display:inline;
+}
+
+/*----------------------------------------------------------------------------
+  Navigatrion Section Highlighting Styles
+  =======================================
+
+  * Design Elements
+  * UI Components
+  * Components
+  * Layouts
+  * CSS Utilities
+
+----------------------------------------------------------------------------*/
+
+body.styleguide-section-DesignElements .styleguide-NavSection--design .styleguide-Nav-heading {
+    background-color: #000;
+    background-image: linear-gradient(to bottom, #444 0%,#222 100%);
+    color:#fff;
+    border-bottom: none;
+}
+body.styleguide-section-UIComponents .styleguide-NavSection--ui-components .styleguide-Nav-heading {
+    background-color: #000;
+    background-image: linear-gradient(to bottom, #444 0%,#222 100%);
+    color:#fff;
+    border-bottom: none;
+}
+body.styleguide-section-ComponentGroups .styleguide-NavSection--group-components .styleguide-Nav-heading {
+    background-color: #000;
+    background-image: linear-gradient(to bottom, #444 0%,#222 100%);
+    color:#fff;
+    border-bottom: none;
+}
+body.styleguide-section-Layouts .styleguide-NavSection--layouts .styleguide-Nav-heading {
+    background-color: #000;
+    background-image: linear-gradient(to bottom, #444 0%,#222 100%);
+    color:#fff;
+    border-bottom: none;
+}
+body.styleguide-section-CSSUtilities .styleguide-NavSection--css-utilities .styleguide-Nav-heading {
+    background-color: #000;
+    background-image: linear-gradient(to bottom, #444 0%,#222 100%);
+    color:#fff;
+    border-bottom: none;
+}
+
+
+/* Current Pages CSS Styling: this is a work around now being able to do is-current in ruby */
+
+/* Design */
+.styleguide-page-Colours .styleguide-nav-item-colours {
+    background:#009dd9;
+    color:#fff;
+    font-weight: bolder;
+}
+.styleguide-page-Icons .styleguide-nav-item-icons {
+    background:#009dd9;
+    color:#fff;
+    font-weight: bolder;
+}
+.styleguide-page-Typography .styleguide-nav-item-typography {
+    background:#009dd9;
+    color:#fff;
+    font-weight: bolder;
+}
+.styleguide-page-Links .styleguide-nav-item-links {
+    background:#009dd9;
+    color:#fff;
+    font-weight: bolder;
+}
+.styleguide-page-Backgrounds .styleguide-nav-item-backgrounds {
+    background:#009dd9;
+    color:#fff;
+    font-weight: bolder;
+}
+/* UI Components */
+.styleguide-page-Alerts .styleguide-nav-item-alerts {
+    background:#009dd9;
+    color:#fff;
+    font-weight: bolder;
+}
+.styleguide-page-Breadcrumbs .styleguide-nav-item-breadcrumbs {
+    background:#009dd9;
+    color:#fff;
+    font-weight: bolder;
+}
+.styleguide-page-Badges\&Labels .styleguide-nav-item-badges-and-labels {
+    background:#009dd9;
+    color:#fff;
+    font-weight: bolder;
+}
+.styleguide-page-Buttons .styleguide-nav-item-buttons {
+    background:#009dd9;
+    color:#fff;
+    font-weight: bolder;
+}
+.styleguide-page-Cards .styleguide-nav-item-cards {
+    background:#009dd9;
+    color:#fff;
+    font-weight: bolder;
+}
+
+.styleguide-page-Carousels .styleguide-nav-item-carousels {
+    background:#009dd9;
+    color:#fff;
+    font-weight: bolder;
+}
+.styleguide-page-Carts .styleguide-nav-item-carts {
+    background:#009dd9;
+    color:#fff;
+    font-weight: bolder;
+}
+.styleguide-page-CallToAction .styleguide-nav-item-call-to-actions {
+    background:#009dd9;
+    color:#fff;
+    font-weight: bolder;
+}
+.styleguide-page-Lists .styleguide-nav-item-lists {
+    background:#009dd9;
+    color:#fff;
+    font-weight: bolder;
+}
+.styleguide-page-Separator .styleguide-nav-item-separator {
+    background:#009dd9;
+    color:#fff;
+    font-weight: bolder;
+}
+.styleguide-page-Figures .styleguide-nav-item-figures {
+    background:#009dd9;
+    color:#fff;
+    font-weight: bolder;
+}
+.styleguide-page-Forms .styleguide-nav-item-forms {
+    background:#009dd9;
+    color:#fff;
+    font-weight: bolder;
+}
+.styleguide-page-Flyouts .styleguide-nav-item-flyouts {
+    background:#009dd9;
+    color:#fff;
+    font-weight: bolder;
+}
+.styleguide-page-Modals .styleguide-nav-item-modals {
+    background:#009dd9;
+    color:#fff;
+    font-weight: bolder;
+}
+.styleguide-page-Navigation .styleguide-nav-item-navigation {
+    background:#009dd9;
+    color:#fff;
+    font-weight: bolder;
+}
+.styleguide-page-Pagination .styleguide-nav-item-pagination {
+    background:#009dd9;
+    color:#fff;
+    font-weight: bolder;
+}
+.styleguide-page-Preloaders .styleguide-nav-item-preloaders {
+    background:#009dd9;
+    color:#fff;
+    font-weight: bolder;
+}
+.styleguide-page-Panels .styleguide-nav-item-panels {
+    background:#009dd9;
+    color:#fff;
+    font-weight: bolder;
+}
+.styleguide-page-ProgressBars .styleguide-nav-item-progress-bars {
+    background:#009dd9;
+    color:#fff;
+    font-weight: bolder;
+}
+.styleguide-page-Tables .styleguide-nav-item-tables {
+    background:#009dd9;
+    color:#fff;
+    font-weight: bolder;
+}
+.styleguide-page-Tabs .styleguide-nav-item-tabs {
+    background:#009dd9;
+    color:#fff;
+    font-weight: bolder;
+}
+.styleguide-page-Sheets .styleguide-nav-item-sheets {
+    background:#009dd9;
+    color:#fff;
+    font-weight: bolder;
+}
+.styleguide-page-Toolbars .styleguide-nav-item-toolbars {
+    background:#009dd9;
+    color:#fff;
+    font-weight: bolder;
+}
+.styleguide-page-Tooltips .styleguide-nav-item-tooltips {
+    background:#009dd9;
+    color:#fff;
+    font-weight: bolder;
+}
+/* Component Groups */
+.styleguide-page-SiteHeader .styleguide-nav-item-components-siteheader {
+    background:#009dd9;
+    color:#fff;
+    font-weight: bolder;
+}
+.styleguide-page-SiteFooter .styleguide-nav-item-components-sitefooter {
+    background:#009dd9;
+    color:#fff;
+    font-weight: bolder;
+}
+.styleguide-page-PageHeader .styleguide-nav-item-components-pageheader {
+    background:#009dd9;
+    color:#fff;
+    font-weight: bolder;
+}
+.styleguide-page-ShareBar .styleguide-nav-item-components-sharebar {
+    background:#009dd9;
+    color:#fff;
+    font-weight: bolder;
+}
+/* Layouts */
+.styleguide-page-Homepage .styleguide-nav-item-layouts-homepage {
+    background:#009dd9;
+    color:#fff;
+    font-weight: bolder;
+}
+/* CSS Utilties */
+.styleguide-page-Grid .styleguide-nav-item-grid {
+    background:#009dd9;
+    color:#fff;
+    font-weight: bolder;
+}
+.styleguide-page-UtilitiesClasses .styleguide-nav-item-utility-classes {
+    background:#009dd9;
+    color:#fff;
+    font-weight: bolder;
+}
+.styleguide-page-Mixins .styleguide-nav-item-mixins {
+    background:#009dd9;
+    color:#fff;
+    font-weight: bolder;
+}
+.styleguide-page-SilentClasses .styleguide-nav-item-silent-classes {
+    background:#009dd9;
+    color:#fff;
+    font-weight: bolder;
+}

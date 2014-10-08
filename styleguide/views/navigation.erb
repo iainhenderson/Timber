@@ -1,0 +1,67 @@
+<% pageSection 'UI Components' %>
+<% pageTitle 'Navigation' %>
+
+<div class="styleguide-pageIntro styleguide-pageCopy">
+    <h1 class="styleguide-heading1"><%= @pageTitle %></h1>
+    <p>
+        Navigation Blocks are for grouping links.
+    </p>
+    <p>
+        Because of the multiple states Navigations have we always use BEM naming on them.
+    </p>
+    <p>
+        While most navigations are wrapped in list items they differ from <a href="/lists">lists</a> generally as the element has a more custom and specifc look and contains just links.
+    </p>
+    <p>
+        Navigation blocks are made up of <code>.Nav-items{}</code>.
+    </p>
+    <p>
+        Located at: <code>screen/blocks/_navigation.scss</code>.
+    </p>
+    <p>
+        <em>Note: <a href="/pagination">Pagination</a>, <a href="/tabs">Tabs</a> are both more specific types of Navigation.</em>
+    </p>
+</div>
+
+<% styleguide_block 'Skip Content' do %>
+<div style="position:relative; overflow:hidden; background:#fefefe">
+    <a href="#content" accesskey="s" class="SkipToContent $modifier_class">Skip Content</a>
+    <ul>
+        <li>
+            <a href="#">Example Menu Link - 1</a>
+        </li>
+        <li>
+            <a href="#">Example Menu Link - 2</a>
+        </li>
+        <li>
+            <a href="#">Example Menu Link - 3</a>
+        </li>
+        <li>
+            <a href="#">Example Menu Link - 4</a>
+        </li>
+    </ul>
+    <div id="content" tabindex="-1">
+        <p>
+            Content - Lorem <a href="#">ipsum dolor</a> sit amet, consectetur adipisicing elit. Facilis necessitatibus nobis iusto <a href="#">blanditiis</a> ipsum aliquam labore nisi ducimus nostrum odio. Ratione, vel, quod? Porro voluptates reprehenderit, minima, vero quis sint.
+        </p>
+    </div>
+</div>
+<% end %>
+
+
+<% styleguide_block 'Primary Navigation' do %>
+<ul class="PrimaryNav">
+    <li class="Nav-item">
+        <a href="#">For Members</a>
+        <ul class="PrimaryNav-secondTier">
+            <li class="Nav-item"><a href="#">Find a Service Centre</a></li>
+            <li class="Nav-item"><a href="#">Make a booking</a></li>
+            <li class="Nav-item"><a href="#">Join</a></li>
+            <li class="Nav-item"><a href="#">Competitions</a></li>
+            <li class="Nav-item"><a href="#">News</a></li>
+        </ul>
+    </li>
+    <li class="Nav-item is-active"><a href="#">For service centres</a></li>
+    <li class="Nav-item Nav-item--contact"><a href="#">Contact</a></li>
+</ul>
+<% end %>

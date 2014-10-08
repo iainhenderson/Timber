@@ -1,0 +1,21 @@
+<% pageSection 'Design Elements' %>
+<% pageTitle 'Icons' %>
+
+<div class="styleguide-pageIntro styleguide-pageCopy">
+    <h1 class="styleguide-heading1"><%= @pageTitle %></h1>
+    <p>
+        These icons are getting automatically generated from any image that is in <code>theme/images/icons/*.png</code>.
+        This is automatically generat a SCSS file to: <code>screen/_generatedIconSprite.scss</code> and a raster sprite file to:
+        <code>themes/images/<sprite class="png"></sprite></code>
+    </p>
+    <p>
+        We use an Icon Block class to text replace and set the icons up. The modifier class (based on the file name) sets background position, width and size.
+    </p>
+</div>
+
+<% styleguide_icon_block 'Icon' do %>
+    <i class="Icon $modifier_class"></i>
+<% end %>
+
+
+kss

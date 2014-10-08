@@ -1,0 +1,135 @@
+<% pageSection 'CSS Utilities' %>
+<% pageTitle 'Utilities Classes' %>
+
+<div class="styleguide-pageIntro styleguide-pageCopy">
+    <h1 class="styleguide-heading1"><%= @pageTitle %></h1>
+    <p>
+        Exaplain why. <code>screen/_utils.scss</code>.
+    </p>
+    <p>
+        Where the concepts come from, why we do this over extends.
+    </p>
+    <hr>
+    <h2>Utilties</h2>
+
+    <p>
+        Utilities are low-level. They have a very narrow scope and may end up being used frequently, due to their separation from the semantics of the document and the theming of a component. As a result, once a class is in significant use great care should be taken when introducing any modifications to it.
+    </p>
+    <h2>Sledge Hammer by design</h2>
+
+    <p>
+        Utilities make use of <code>!important</code> to ensure that their styles always apply ahead of those defined in a component's dedicated CSS.
+    </p>
+
+    <p>
+        To apply a trait, or a combination of traits to an element, add the corresponding class directly to the HTML.
+    </p>
+
+    <p>Together, they can form a wide variety of UI patterns from simple principles. Although you won't always want to use combinations of utilities to generate more complicated patterns, the option is there. Refactoring a component's HTML to move particular utility traits into the component's own styles is a relatively simple task.</p>
+
+    <p>
+        All Utilities should <strong>Never be Extended</strong>.
+    </p>
+
+    <p>We <strong>do not</strong> use the responsive utilties that bootstrap provides. Instead we use mobile first.</p>
+
+    <h2>Responsively Extending Utilities</h2>
+
+    <p>When re extend these utilties at a specific size we append <code>@</code> follow by the media query.</p>
+    <p><em>For example: if we want to display block an item at medium </em><code>u-displayBlock@md</code></p>
+
+    <hr>
+    <div>
+      <h2>Float Utilties:</h2>
+        <ul>
+            <li><code>.u-pullLeft</code></li>
+            <li><code>.u-pullRight</code></li>
+            <li><code>.u-centered</code></li>
+            <li><code>.u-uncentered</code></li>
+            <li><code>.u-clearRowOff</code></li>
+            <li><code>.u-clearRowOn</code></li>
+        </ul>
+    </div>
+
+    <div>
+      <h2>Image Replace Utilties:</h2>
+        <ul>
+
+            <li><code>.u-ir</code></li>
+            <li><code>.u-visuallyHidden</code></li>
+        </ul>
+    </div>
+
+    <div>
+      <h2>Text Align Utilties:</h2>
+        <ul>
+
+            <li><code>.u-alignLeft</code></li>
+            <li><code>.u-alignRight</code></li>
+            <li><code>.u-alignCenter</code></li>
+            <li><code>.u-alignTop</code></li>
+            <li><code>.u-alignMiddle</code></li>
+            <li><code>.u-alignBaseline</code></li>
+            <li><code>.u-alignBottom</code></li>
+
+        </ul>
+    </div>
+
+    <div>
+      <h2>Display Utilties</h2>
+        <ul>
+            <li><code>.u-hidden</code></li>
+            <li><code>.u-relative </code></li>
+            <li><code>.u-displayBlock</code></li>
+            <li><code>.u-displayNone</code></li>
+            <li><code>.u-displayInline</code></li>
+            <li><code>.u-displayTableCell</code></li>
+            <li><code>.u-displayTable</code></li>
+            <li><code>.u-displayTableRow</code></li>
+            <li><code>.u-displayInlineBlock</code></li>
+            <li><code>.u-visuallyHidden</code></li>
+
+        </ul>
+    </div>
+
+    <div>
+      <h2>Text Utilties</h2>
+        <ul>
+            <li><code>.u-textKern</code></li>
+            <li><code>.u-textTruncate</code></li>
+            <li><code>.u-textBreak</code></li>
+            <li><code>.u-textTransformNone</code></li>
+            <li><code>.u-textNoWrap</code></li>
+        </ul>
+    </div>
+
+    <div>
+      <h2>Layout Utilties</h2>
+        <ul>
+            <li><code>.u-posAbsoluteCenter</code></li>
+        </ul>
+    </div>
+
+    <div>
+        <h2>Effect Utilities</h2>
+        <ul>
+            <li><code>.u-circle</code></li>
+
+        </ul>
+    </div>
+
+    <div>
+        <h2>Pattern Utiltiies</h2>
+        <p>Pattern Utilities are when the utility has child selectors attatched to it.</p>
+        <ul>
+            <li><code>.u-unstyled-list</code></li>
+            <li><code>.u-inlineList </code></li>
+            <li><code>.u-floatedList</code></li>
+            <li><code>.u-mediaBlockLeft</code></li>
+            <li><code>.u-mediaBlockRight</code></li>
+            <li><code>.u-inlineDefintions</code></li>
+            <li><code>.u-pseudoIconAfter</code></li>
+
+        </ul>
+    </div>
+</div>

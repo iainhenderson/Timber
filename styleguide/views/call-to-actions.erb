@@ -1,0 +1,27 @@
+<% pageSection 'UI Components' %>
+<% pageTitle 'Call To Action' %>
+
+<div class="styleguide-pageIntro styleguide-pageCopy">
+    <h1 class="styleguide-heading1"><%= @pageTitle %></h1>
+    <p>
+        Call to Action are a more specific <a href="/panel">Panel Block</a>.
+        What seperates these from a button is they are genearlly grouped with a title and sometimes a paragraph block.
+    </p>
+    <p>
+        Located at: <code>screen/blocks/_callToActions.scss</code>.
+    </p>
+</div>
+
+<% styleguide_block 'CTA - Blog' do %>
+<div class="CalToAction Background--2">
+    <div class="CalToAction-container">
+        <h5 class="CalToAction-title">Call to Action</h5>
+        <div class="CallToAction-description">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        <a class="Button Button--skyBlue">
+            Join Club Evolution <i class="ButtonIcon"></i>
+        </a>
+    </div>
+</div>
+<% end %>

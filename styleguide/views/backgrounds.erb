@@ -1,0 +1,14 @@
+<% pageSection 'UI Components' %>
+<% pageTitle 'Backgrounds' %>
+
+<div class="styleguide-pageIntro styleguide-pageCopy">
+    <h1 class="styleguide-heading1"><%= @pageTitle %></h1>
+    <p>
+        When using a background it's best to keep the styles unnessed and with non descriptive numeric names. As they often get reused in another modules. They are located at: <code>screen/blocks/_backgrounds.scss</code>.
+    </p>
+</div>
+
+
+<% styleguide_block_transparent 'Background Styles' do %>
+    <div style="height: 260px; margin-top:21px;" class="$modifier_class"></div>
+<% end %>
