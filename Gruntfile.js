@@ -20,38 +20,40 @@ module.exports = function(grunt) {
 
     // Configurable paths
     var config = {
-
         pkg: grunt.file.readJSON('package.json'),
         env: process.env,
 
-        srcDir: '',
-        buildDir: target,
-
-        appDir: '',
-        templateDir: '',
-        publicDir: '',
-        themeDir: '',
-
-        imageDir: 'images',
-        scriptDir: 'scripts',
-        fontDir: 'fonts',
-        stylesDir: 'styles',
-        scssDir: 'scss',
-
-        appSrcDir: '', // '<%= config.srcDir %>/<%= config.appDir %>',
-        templateSrcDir: '', // '<%= config.appSrcDir %>/<%= config.templateDir %>',
-        publicSrcDir: '', // '<%= config.srcDir %>/<%= config.publicDir %>',
-        themeSrcDir: '', //'<%= config.publicSrcDir %>/<%= config.themeDir %>',
-
-        appBuildDir: '<%= config.buildDir %>/<%= config.appDir %>',
-        templateBuildDir: '<%= config.appBuildDir %>/<%= config.templateDir %>',
-        publicBuildDir: '<%= config.buildDir %>/<%= config.publicDir %>',
-        themeBuildDir: '<%= config.publicBuildDir %>/<%= config.themeDir %>',
-
-        localtunnel: {
-            port: 80,
-            local_host: 'local.craft-template'
-        }
+        srcDir: 'theme/src',
+        testDir: 'theme/test',
+        distDir: 'theme/dist',
+        
+        timberSass: [
+            '/base/variables',
+            '/base/mixins',
+            '/base/normalise',
+            '/base/grid',
+            '/base/stage',
+            '/base/helpers',
+            '/base/typography',
+            '/components/rich-text-editor',
+            '/components/links-and-buttons',
+            '/components/lists',
+            '/components/tables',
+            '/components/media-object',
+            '/components/images-and-iframes',
+            '/components/forms',
+            '/components/icons',
+            '/components/pagination',
+            '/components/header',
+            '/components/footer',
+            '/components/product-grid',
+            '/components/collection-filters',
+            '/components/breadcrumbs',
+            '/pages/product-page',
+            '/pages/blog-and-comments',
+            '/pages/notes-and-feedback',
+            '/pages/cart'
+        ]
     };
 
     // Define the configuration for all the tasks
@@ -72,6 +74,58 @@ module.exports = function(grunt) {
             scss: {
                 files: ['assets/timber.scss.liquid'],
                 tasks: ['copy:liquidsass', 'liquid', 'sass', 'autoprefixer:src']
+            }
+        },
+
+        clean: {
+            test: {
+                dot: true,
+                src: [
+                    '<%= config.testDir %>/**/*',
+                ]
+            },
+            dist: {
+                dot: true,
+                src: [
+                    '<%= config.distDir %>/**/*',
+                ]
+            }
+        },
+
+        copy: {
+            srcToTest: {
+                files [
+                    {
+                        expand: true, 
+                        flatten: true,
+                        src: ['<%= config.srcDir %>/scripts/**', '<%= config.srcDir %>/images/**', '<%= config.srcDir %>/fonts/**'],
+                        dest: '<%= config.testDir %>/assets'
+                    },
+                    {
+                        expand: true, 
+                        flatten: true,
+                        src: ['<%= config.srcDir %>/config/**'],
+                        dest: '<%= config.testDir %>/config'
+                    },
+                    {
+                        expand: true, 
+                        flatten: true,
+                        src: ['<%= config.srcDir %>/layout/**'],
+                        dest: '<%= config.testDir %>/layout'
+                    },
+                    {
+                        expand: true, 
+                        flatten: true,
+                        src: ['<%= config.srcDir %>/snippets/**'],
+                        dest: '<%= config.testDir %>/snippets'
+                    },
+                    {
+                        expand: true, 
+                        flatten: false,
+                        src: ['<%= config.srcDir %>/templates/**'],
+                        dest: '<%= config.testDir %>/templates'
+                    },
+                ]
             }
         },
 
@@ -99,13 +153,6 @@ module.exports = function(grunt) {
                   "logo_max_width": "450",
                   "logo_use_image": false
                 },
-                products: [
-                    {
-                      name: "Wonderflonium",
-                      price: "$9.99",
-                      description: "Great for building freeze rays!"
-                    }
-                ],
                 filters: {
                   asset_url: function(asset) {
                     return "./assets/" + asset
@@ -151,17 +198,21 @@ module.exports = function(grunt) {
             }
         },
 
-        copy: {
-            liquidsass: {
-                dest: './styleguide/public/timber.scss',
-                src: './assets/timber.scss.liquid'
-            }
-        },
-
         // Run some tasks in parallel to speed up build process
         concurrent: {}
     });
+    
+    grunt.registerTask('test', [
+        'copy:liquidsass', 
+        'liquid', 
+        'sass', 
+        'autoprefixer:src'
+    ]);
 
-    grunt.registerTask('build', ['copy:liquidsass', 'liquid', 'sass', 'autoprefixer:src']);
-
+    grunt.registerTask('build', [
+        'copy:liquidsass', 
+        'liquid', 
+        'sass', 
+        'autoprefixer:src']
+    );
 };

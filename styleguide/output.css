@@ -1,0 +1,48 @@
+/*
+Syntax error: Invalid CSS after "$colorPrimary: ": expected expression (e.g. 1px, bold), was "{{ settings.col..."
+        on line 78 of timber.scss.liquid
+
+73: /*============================================================================
+74:   #General Variables
+75: ==============================================================================*\/
+76: 
+77: // Timber Colors
+78: $colorPrimary: {{ settings.color_primary }};
+79: $colorSecondary: {{ settings.color_secondary }};
+80: 
+81: // Button colors
+82: $colorBtnPrimary: $colorPrimary;
+83: $colorBtnPrimaryHover: darken($colorBtnPrimary, 10%);
+
+Backtrace:
+timber.scss.liquid:78
+/Users/iainhenderson/.rvm/gems/ruby-1.9.3-p385/gems/sass-3.3.8/lib/sass/scss/parser.rb:1314:in `expected'
+/Users/iainhenderson/.rvm/gems/ruby-1.9.3-p385/gems/sass-3.3.8/lib/sass/script/lexer.rb:216:in `expected!'
+/Users/iainhenderson/.rvm/gems/ruby-1.9.3-p385/gems/sass-3.3.8/lib/sass/script/parser.rb:571:in `assert_expr'
+/Users/iainhenderson/.rvm/gems/ruby-1.9.3-p385/gems/sass-3.3.8/lib/sass/script/parser.rb:56:in `parse'
+/Users/iainhenderson/.rvm/gems/ruby-1.9.3-p385/gems/sass-3.3.8/lib/sass/scss/parser.rb:1175:in `sass_script'
+/Users/iainhenderson/.rvm/gems/ruby-1.9.3-p385/gems/sass-3.3.8/lib/sass/scss/parser.rb:605:in `variable'
+/Users/iainhenderson/.rvm/gems/ruby-1.9.3-p385/gems/sass-3.3.8/lib/sass/scss/parser.rb:659:in `block_child'
+/Users/iainhenderson/.rvm/gems/ruby-1.9.3-p385/gems/sass-3.3.8/lib/sass/scss/parser.rb:652:in `block_contents'
+/Users/iainhenderson/.rvm/gems/ruby-1.9.3-p385/gems/sass-3.3.8/lib/sass/scss/parser.rb:116:in `stylesheet'
+/Users/iainhenderson/.rvm/gems/ruby-1.9.3-p385/gems/sass-3.3.8/lib/sass/scss/parser.rb:41:in `parse'
+/Users/iainhenderson/.rvm/gems/ruby-1.9.3-p385/gems/sass-3.3.8/lib/sass/engine.rb:409:in `_to_tree'
+/Users/iainhenderson/.rvm/gems/ruby-1.9.3-p385/gems/sass-3.3.8/lib/sass/engine.rb:274:in `render'
+/Users/iainhenderson/.rvm/gems/ruby-1.9.3-p385/gems/sass-3.3.8/lib/sass/plugin/compiler.rb:378:in `update_stylesheet'
+/Users/iainhenderson/.rvm/gems/ruby-1.9.3-p385/gems/sass-3.3.8/lib/sass/plugin/compiler.rb:189:in `block in update_stylesheets'
+/Users/iainhenderson/.rvm/gems/ruby-1.9.3-p385/gems/sass-3.3.8/lib/sass/plugin/compiler.rb:186:in `each'
+/Users/iainhenderson/.rvm/gems/ruby-1.9.3-p385/gems/sass-3.3.8/lib/sass/plugin/compiler.rb:186:in `update_stylesheets'
+/Users/iainhenderson/.rvm/gems/ruby-1.9.3-p385/gems/sass-3.3.8/lib/sass/plugin/compiler.rb:221:in `watch'
+/Users/iainhenderson/.rvm/gems/ruby-1.9.3-p385/gems/sass-3.3.8/lib/sass/plugin.rb:108:in `method_missing'
+/Users/iainhenderson/.rvm/gems/ruby-1.9.3-p385/gems/sass-3.3.8/lib/sass/exec.rb:509:in `watch_or_update'
+/Users/iainhenderson/.rvm/gems/ruby-1.9.3-p385/gems/sass-3.3.8/lib/sass/exec.rb:346:in `process_result'
+/Users/iainhenderson/.rvm/gems/ruby-1.9.3-p385/gems/sass-3.3.8/lib/sass/exec.rb:43:in `parse'
+/Users/iainhenderson/.rvm/gems/ruby-1.9.3-p385/gems/sass-3.3.8/lib/sass/exec.rb:22:in `parse!'
+/Users/iainhenderson/.rvm/gems/ruby-1.9.3-p385/gems/sass-3.3.8/bin/sass:13:in `<top (required)>'
+/Users/iainhenderson/.rvm/gems/ruby-1.9.3-p385/bin/sass:23:in `load'
+/Users/iainhenderson/.rvm/gems/ruby-1.9.3-p385/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Invalid CSS after \"$colorPrimary: \": expected expression (e.g. 1px, bold), was \"{{ settings.col...\"\A         on line 78 of timber.scss.liquid\A \A 73: /*============================================================================\A 74:   #General Variables\A 75: ==============================================================================*/\A 76: \A 77: // Timber Colors\A 78: $colorPrimary: {{ settings.color_primary }};\A 79: $colorSecondary: {{ settings.color_secondary }};\A 80: \A 81: // Button colors\A 82: $colorBtnPrimary: $colorPrimary;\A 83: $colorBtnPrimaryHover: darken($colorBtnPrimary, 10%);"; }
