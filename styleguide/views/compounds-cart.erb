@@ -3,40 +3,7 @@
 
 <div class="styleguide-pageIntro styleguide-pageCopy">
     <h1 class="styleguide-heading1"><%= @pageTitle %></h1>
-    <p>
-        The cart element is handy for any eCommerce checkout page. Located in <code>screen/blocks/_carts.scss</code>
-    </p>
-    <p>
-        <em>
-            Note: If we are just just displaying an overview of items in the cart we often set this up as a Cart Button.
-        </em>
-    </p>
 </div>
 
-<% styleguide_block 'Cart' do %>
-<div class="Cart $modifier_class">
-    <div class="Cart-header">
-        <h3 class="Cart-title">
-            <span class="Cart-itemCount">3</span> Items
-        </h3>
-    </div>
-    <div class="Cart-body">
-        <table class="Table Table--data">
-            <tbody class="Cart-itemCollection">
-                <tr class="CartItem">
-                    <th>Cart Item</th>
-                    <td>$3.00</td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <th>Total</th>
-                    <td class="Cart-itemTotal">$3.00</td>
-                </tr>
-            </tfoot>
-        </table>
-    </div>
-    <div class="Cart-footer">
-    </div>
-</div>
-<% end %>
+<%= erb :partial_cart, :layout => false %>
+

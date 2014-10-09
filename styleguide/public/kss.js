@@ -84,3 +84,5 @@ $('.styleguide-js-expand-code').on('click', function(event) {
     $(this).toggleClass('styleguide-code-is-collapsed');
     $(this).prev('.styleguide-codeblock').toggleClass('styleguide-code-is-collapsed');
 });
+
+$('.styleguide-nav-item').filter('[href="'+window.location.pathname+'"]').addClass('is-current');
