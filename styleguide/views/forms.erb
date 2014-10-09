@@ -3,204 +3,130 @@
 
 <div class="styleguide-pageIntro styleguide-pageCopy">
     <h1 class="styleguide-heading1"><%= @pageTitle %></h1>
-    <p>
-        These components are the basic building blocks for creating forms. Each of these elements can be used individually throughout the site.
-    </p>
-    <p>
-        Located at: <code>screen/blocks/_forms.scss</code>.
-    </p>
-    <p>
-        <strong>Forms are broken into:</strong>
-    </p>
-    <ul>
-        <li>
-            <a href="#TextInput">Basic Control Inputs</a>
-        </li>
-        <li>
-            <a href="#Control">Control Groups Components</a>
-        </li>
-        <li>
-            <a href="#DesignedForm">Form Examples</a>
-        </li>
-    </ul>
+
+    <h5>Vertical (default)</h5>
+    <p>By default, forms follow this pattern. Be sure to remove element bottom padding if you aren't using a large form.</p>
+
+    <h5>Horizontal</h5>
+    <p>To make form elements flow inline, add a class of .form-horizontal to the parent.</p>
+
+    <p>You cannot add a class directly to most liquid form elements (e.g. {% form 'contact' %}). Instead, wrap the form in a div with the class .form-horizontal to achieve the same effect.</p>
+
+    <h5>Invisible Labels</h5>
+    <p>Add a class of hidden-label to a label to hide it, while keeping it accessible to screen readers. Use the placeholder attribute as your visible label.</p>
+
+    <p>Note: The placeholder attribute only works in IE10+, so invisible labels are disabled in IE9 and below.</p>
 </div>
 
-<% styleguide_block 'Text Input' do %>
-    <input class="ControlInput $modifier_class "
-           type="text"
-           value=""
-           />
-
-    <input class="ControlInput $modifier_class "
-           type="text"
-           placeholder="e.g $modifier_class Placeholder"/>
-
-    <input class="ControlInput $modifier_class "
-           type="text"
-           value="e.g $modifier_class with Content"
-           />
+<% styleguide_block 'Newsletter Form' do %>
+    <form action="#" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" class="input-group">
+      <input type="email" value="" placeholder="Email address" name="EMAIL" id="mail" class="input-group-field">
+      <span class="input-group-btn">
+        <input type="submit" class="btn" value="Subscribe" name="subscribe" id="subscribe">
+      </span>
+    </form>
 <% end %>
 
-<% styleguide_block 'Text Area' do %>
-    <textarea class="ControlInput $modifier_class"></textarea>
-    <textarea class="ControlInput $modifier_class" placeholder="e.g $modifier_class Placeholder"></textarea>
-    <textarea class="ControlInput $modifier_class" placeholder="e.g $modifier_class Placeholder">Example of a text area with actual content inside of it.</textarea>
-<% end %>
 
-<% styleguide_block 'Password Input' do %>
-<input class="ControlInput $modifier_class "
-       type="password"
-       />
+<% styleguide_block 'Vertical Form' do %>
+<div class="grid">
+    <div class="grid-item large--one-third">
+      <label for="text1">Text Field</label>
+      <input type="text" id="text1">
 
-<input class="ControlInput $modifier_class "
-       type="password"
-       placeholder="e.g $modifier_class Placeholder"/>
+      <label for="text2">Placeholder</label>
+      <input type="text" id="text2" placeholder="Placeholder text">
 
-<input class="ControlInput $modifier_class "
-       type="password"
-       value="e.g $modifier_class with Content"
-       />
-<% end %>
+      <label for="text3">Disabled Field</label>
+      <input type="text" id="text3" disabled="">
 
-<% styleguide_block 'Checkbox Input' do %>
-    <input id="example1-$modifier_class" type="checkbox" class="ControlInput ControlInput--checkbox $modifier_class" />
-    <label for="example1-$modifier_class">This is an example.</label>
-<% end %>
+      <label for="text4">Label with Hint <span class="label-hint">A-Z, 0-9</span></label>
+      <input type="text" id="text4">
 
-<% styleguide_block 'Radio Options' do %>
-    <input id="example3-$modifier_class" type="radio" name="radio-example" class="ControlInput ControlInput--radio $modifier_class" /><label for="example3-$modifier_class">Example One</label>
-    <input id="example4-$modifier_class" type="radio" name="radio-example" class="ControlInput ControlInput--radio $modifier_class" checked /><label for="example4-$modifier_class">Example Two</label>
-<% end %>
-
-<% styleguide_block 'Select Input' do %>
-    <select class="ControlInput ControlInput--select $modifier_class">
-        <option></option>
-        <option value="1">ControlInput ControlInput--select</option>
-        <option value="2">ControlInput ControlInput--select</option>
-        <optgroup label="Option Group">
-            <option value="3">ControlInput ControlInput--select</option>
-            <option value="4">ControlInput ControlInput--select</option>
-        </optgroup>
-    </select>
-
-    <select class="ControlInput ControlInput--select $modifier_class" multiple>
-        <option value="1">ControlInput ControlInput--select</option>
-        <option value="2">ControlInput ControlInput--select</option>
-        <optgroup label="Option Group">
-            <option value="3">ControlInput ControlInput--select</option>
-            <option value="4">ControlInput ControlInput--select</option>
-        </optgroup>
-    </select>
-<% end %>
-
-<!-- End Input Types -->
-
-<!-- Start Control Groups -->
-<% styleguide_block 'Control' do %>
-<div class="Control $modifier_class">
-    <label class="Control-label">Control Label</label>
-    <div class="Control-description">Control Description Example.</div>
-    <input class="ControlInput ControlInput--text" type="text" placeholder="ControlInput Placeholder"/>
-</div>
-<% end %>
-
-<% styleguide_block 'Control Group Example' do %>
-<div class="ControlGroup $modifier_class">
-    <div class="ControlGroup-label">
-        ControlGroup Label
-        <span class="required-flag">*</span>
+      <label for="text5" class="error">Text Field (Error)</label>
+      <input type="text" id="text5" class="error" value="Invalid Entry">
     </div>
-    <div class="ControlGroup-instructions">
-        ControlGroup Instructions
+
+    <div class="grid-item large--one-third">
+      <label for="select1">Select Field</label>
+      <select id="select1">
+        <option value="0">-- Choose --</option>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+      </select>
+
+      <fieldset>
+        <legend>Checkboxes</legend>
+        <input type="checkbox" id="check1"> <label for="check1" class="inline">Checkbox Field</label><br>
+        <input type="checkbox" id="check2"> <label for="check2" class="inline">Checkbox Field</label><br>
+        <input type="checkbox" id="check3"> <label for="check3" class="inline">Checkbox Field</label>
+      </fieldset>
+
+      <fieldset>
+      <legend>Radios</legend>
+        <input type="radio" name="radio" id="radio1"> <label for="radio1" class="inline">Option1</label><br>
+        <input type="radio" name="radio" id="radio2"> <label for="radio2" class="inline">Option1</label><br>
+        <input type="radio" name="radio" id="radio3"> <label for="radio3" class="inline">Option1</label>
+      </fieldset>
     </div>
-    <div class="ControlGroup-controls">
-        <div class="Control is-required">
-            <div class="Control-label">Credit Card</div>
-            <input class="ControlInput ControlInput--text" type="text" placeholder="e.g 4017 XXX XXXX"/>
-        </div>
-        <div class="Control is-required">
-            <div class="Control-label">CC</div>
-            <input class="ControlInput ControlInput--text" type="text" placeholder="123"/>
-        </div>
+    <div class="grid-item large--one-third">
+      <label for="textarea1">Textarea</label>
+      <textarea id="textarea1" placeholder="Placeholder text"></textarea>
+
+      <label for="file1">File Field</label>
+      <input id="file1" type="file">
     </div>
 </div>
 <% end %>
 
-<% styleguide_block 'Designed Form' do %>
-<div class="Form row $modifier_class" style="margin:10px auto; max-width:615px;">
-    <div class="ControlGroup">
-        <div class="col-sm-6">
-            <div class="Control is-required">
-                <label class="Control-label">Name</label>
-                <input class="ControlInput ControlInput--text" type="text" />
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="Control is-required">
-                <label class="Control-label">Email</label>
-                <input class="ControlInput ControlInput--text" type="email" />
-                <label class="Control-description">Please Enter an email address</label>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="Control is-required">
-                <label class="Control-label">Address</label>
-                <input class="ControlInput ControlInput--text" type="email" />
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="Control is-required is-invalid">
-                <label class="Control-label">Postcode</label>
-                <input class="ControlInput ControlInput--text" type="email" />
-                <label class="Control-description">Please Enter a postcode </label>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="Control">
-                <label class="Control-label">State</label>
-                <select class="ControlInput ControlInput--text ControlInput--select">
-                    <option></option>
-                    <option value="1">ControlInput ControlInput--select</option>
-                    <option value="2">ControlInput ControlInput--select</option>
-                    <optgroup label="Option Group">
-                        <option value="3">ControlInput ControlInput--select</option>
-                        <option value="4">ControlInput ControlInput--select</option>
-                    </optgroup>
-                </select>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="Control">
-                <label class="Control-label">State</label>
-                <select class="ControlInput ControlInput--text ControlInput--select">
-                    <option></option>
-                    <option value="1">ControlInput ControlInput--select</option>
-                    <option value="2">ControlInput ControlInput--select</option>
-                    <optgroup label="Option Group">
-                        <option value="3">ControlInput ControlInput--select</option>
-                        <option value="4">ControlInput ControlInput--select</option>
-                    </optgroup>
-                </select>
-            </div>
-        </div>
-        <div class="col-xs-12">
-            <div class="Control">
-                <label for="#" class="Control-label">Description</label>
-                <textarea class="ControlInput ControlInput--text ControlInput--textarea"
-                          rows="10">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit tempus porttitor.</textarea>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-8">
-        <div class="Control Control--verticalInputs">
-            <input id="styleguide-remember" type="checkbox" class="ControlInput ControlInput--checkbox" /><label for="styleguide-remember">Remember my personal information</label>
-            <input id="styleguide-notify" type="checkbox" class="ControlInput ControlInput--checkbox" /><label for="styleguide-notify">Notify me of follow-up comments</label>
-        </div>
-    </div>
-    <div class="col-sm-4">
-        <div class="Form-actions">
-            <button class="Button">Submit</button>
-        </div>
+<% styleguide_block 'Horizontal Form' do %>
+<form class="form-horizontal">
+<label for="textHorizontal1">Horizontal Label</label>
+<input type="text" id="textHorizontal1" placeholder="First name">
+<input type="text" id="textHorizontal2" placeholder="Last name">
+<select id="selectHorizontal1">
+  <option value="0">-- Choose --</option>
+  <option value="1">Option 1</option>
+  <option value="2">Option 2</option>
+  <option value="3">Option 3</option>
+</select>
+<input type="checkbox" id="checkInline"> <label for="checkInline" class="inline">Checkbox Label</label>
+</form>
+<% end %>
+
+<% styleguide_block 'Invisible Labels' do %>
+    <form class="form-horizontal">
+        <label for="testInvisibleLabel1" class="hidden-label">First Name</label>
+        <input type="text" id="testInvisibleLabel1" name="testInvisibleLabel1" placeholder="First Name">
+        <label for="testInvisibleLabel2" class="hidden-label">Last Name</label>
+        <input type="text" id="testInvisibleLabel2" name="testInvisibleLabel2" placeholder="Last Name">
+        <label for="testInvisibleLabel3" class="hidden-label">Email</label>
+        <input type="text" id="testInvisibleLabel3" name="testInvisibleLabel3" placeholder="Email">
+      </form>
+<% end %>
+
+
+<% styleguide_block 'Input Groups' do %>
+<div class="grid">
+    <div class="grid-item large--one-half">
+        <h4 class="docs-example">Example 1</h4>
+        <div class="input-group">
+            <span class="input-group-btn">
+              <input type="submit" class="btn" value="Go">
+          </span>
+          <input type="text" name="q" value="" placeholder="Placeholder" class="input-group-field">
+      </div>
+  </div>
+      <div class="grid-item large--one-half">
+        <h4 class="docs-example">Example 2 | Mailchimp Integration</h4>
+        <form action="#" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" class="input-group">
+            <input type="email" value="" placeholder="Email address" name="EMAIL" id="mail" class="input-group-field">
+            <span class="input-group-btn">
+              <input type="submit" class="btn-secondary" value="Subscribe" name="subscribe" id="subscribe">
+          </span>
+      </form>
     </div>
 </div>
 <% end %>
+

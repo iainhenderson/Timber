@@ -3,60 +3,24 @@
 
 <div class="styleguide-pageIntro styleguide-pageCopy">
     <h1 class="styleguide-heading1"><%= @pageTitle %></h1>
-    <p>
-        The button classes are best applied to links, buttons, <span style="text-decoration: line-through;">and submit inputs.</span> These components can be used in forms, as calls to action, or as part of the
-        general UI of the site/app. Buttons are located at: <code>screen/blocks/_buttons.scss</code>.
-    </p>
-    <p>
-        As we use a BEM approach we create modifiers that could possibly mix into hundreds of combinations it's important to list the actual modifier combinations <strong>IN USE</strong> in the styleguide at the top for other devs.
-    </p>
-    <p>
-        Note we <strong>DO NOT</strong> use <code>&lt;input[type=submit] /&gt;</code> instead always use <code>&lt;button&gt;</code> for the form element. This is due to the limitations of psuedo elements that <code>&lt;input[type=submit] /&gt;</code> has.
-    </p>
-    <p>
-        If the button has clearly two styles feel free to set up multiple base styles so you don't have to contstantly fight the <code>.Button</code> block style.
-    </p>
+    <p>Timber offers a primary and secondary button to be used or customized as you need.</p>
 </div>
 
-<% styleguide_block_transparent 'Styleguide Buttons in Use' do %>
-<div style="padding:15px 0;">
-    <button class="Button $modifier_class">Button <i class="ButtonIcon"></i></button>
-</div>
-<% end %>
 
-<% styleguide_block_transparent 'Base Button' do %>
-    <a href="#" class="Button $modifier_class">Button</a>
-    <span class="Button $modifier_class">Button</span>
-    <button class="Button $modifier_class">Button</button>
-    <a href="#" class="Button $modifier_class is-disabled">Button</a>
-    <span class="Button $modifier_class is-disabled">Button</span>
-    <button class="Button $modifier_class is-disabled">Button</button>
-<% end %>
-
-<% styleguide_block_transparent 'Button Colours Modifiers' do %>
-    <a href="#" class="Button $modifier_class">Button</a>
-    <span class="Button $modifier_class">Button</span>
-    <button class="Button $modifier_class">Button</button>
-    <a href="#" class="Button $modifier_class is-disabled">Button</a>
-    <span class="Button $modifier_class is-disabled">Button</span>
-    <button class="Button $modifier_class is-disabled">Button</button>
-<% end %>
-
-<% styleguide_block_transparent 'Button Types Modifiers' do %>
-    <a href="#" class="Button Button--grey1 $modifier_class">Button</a>
-    <span class="Button Button--grey1 $modifier_class">Button</span>
-    <button class="Button Button--grey1 $modifier_class">Button</button>
-    <a href="#" class="Button Button--grey1 $modifier_class is-disabled">Button</a>
-    <span class="Button Button--grey1 $modifier_class is-disabled">Button</span>
-    <button class="Button Button--grey1 $modifier_class is-disabled">Button</button>
-<% end %>
-
-
-<% styleguide_block_transparent 'Button Types Modifiers' do %>
-    <a href="#" class="Button Button--grey1 $modifier_class">Button</a>
-    <span class="Button Button--grey1 $modifier_class">Button</span>
-    <button class="Button Button--grey1 $modifier_class">Button</button>
-    <a href="#" class="Button Button--grey1 $modifier_class is-disabled">Button</a>
-    <span class="Button Button--grey1 $modifier_class is-disabled">Button</span>
-    <button class="Button Button--grey1 $modifier_class is-disabled">Button</button>
+<% styleguide_block 'Buttons' do %>
+    <p>
+    <a href="#" class="btn">Default Button</a>
+    <a href="#" class="btn btn--small">Small Default Button</a>
+    </p>
+    <p>
+    <a href="#" class="btn-secondary">Secondary Button</a>
+    <a href="#" class="btn-secondary btn--small">Small Secondary Button</a>
+    </p>
+    <p>
+    <a href="#" class="btn disabled">Disabled Button</a>
+    <a href="#" class="btn disabled btn--small">Small Disabled Button</a>
+    </p>
+    <p>
+    <a href="#" class="btn btn--full">Wide Button</a>
+    </p>
 <% end %>

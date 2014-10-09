@@ -1,0 +1,126 @@
+/*============================================================================
+  #Breakpoint and Grid Variables
+==============================================================================*/
+$viewportIncrement: 1px;
+
+$small: 480px;
+$medium: 768px;
+$large: 769px;
+
+$postSmall: $small + $viewportIncrement;
+$preMedium: $medium - $viewportIncrement;
+$preLarge: $large - $viewportIncrement;
+
+/*================ The following are dependencies of csswizardry grid ================*/
+$breakpoints: (
+  'small' '(max-width: #{$small})',
+  'medium' '(min-width: #{$postSmall}) and (max-width: #{$medium})',
+  'medium-down' '(max-width: #{$medium})',
+  'large' '(min-width: #{$large})'
+);
+$breakpoint-has-widths: ('small', 'medium', 'medium-down', 'large');
+$breakpoint-has-push:  ('medium', 'medium-down', 'large');
+$breakpoint-has-pull:  ('medium', 'medium-down', 'large');
+
+/*============================================================================
+  #General Variables
+==============================================================================*/
+
+/*
+User Configurable Colours
+
+colorPrimary - #747474;
+colorSecondary - #464646;
+colorTextBody - #333333;
+colorBody -  #fff;
+colorBorder - #e5e5e5;
+colorFooterBg - #f2f2f2;
+colorFooterText -  #636363;
+
+Styleguide Colours - User
+*/
+
+
+/*
+User Configurable Colours
+
+errorRed - #dc0000;
+successGreen - #0a942a;
+disabledGrey - #f6f6f6;
+
+Styleguide Colours - System
+*/
+
+
+// Timber Colors
+$colorPrimary: #747474;
+
+$colorSecondary: #464646;
+
+// Button colors
+$colorBtnPrimary: $colorPrimary;
+$colorBtnPrimaryHover: darken($colorBtnPrimary, 10%);
+$colorBtnPrimaryActive: darken($colorBtnPrimaryHover, 10%);
+
+$colorBtnSecondary: $colorSecondary;
+$colorBtnSecondaryHover: darken($colorBtnSecondary, 10%);
+$colorBtnSecondaryActive: darken($colorBtnSecondaryHover, 10%);
+
+// Text link colors
+$colorLink: $colorPrimary;
+$colorLinkHover: lighten($colorPrimary, 15%);
+
+// Text colors
+$colorTextBody: #333333;
+
+// Backgrounds
+$colorBody: #fff;
+
+// Border colors
+$colorBorder: #e5e5e5;
+
+// Nav and dropdown link background
+$colorNav: #f2f2f2;
+$colorNavText: #333;
+
+// Site Footer
+$colorFooterBg: #f2f2f2;
+$colorFooterText: #636363;
+
+// Helper colors
+$disabledGrey: #f6f6f6;
+$disabledBorder: darken($disabledGrey, 25%);
+$errorRed: #dc0000;
+$errorRedBg: lighten($errorRed, 55%);
+$successGreen: #0a942a;
+
+// Width variables
+$siteWidth: 1180px;
+$gutter: 24px;
+$gridGutter: 24px; // can be a %, but nested grids will have smaller margins because of it
+
+// Radius
+$radius: 3px;
+
+/*================ Typography ================*/
+
+// Header Font
+$headerFontStack: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$headerFontWeight: 700;
+
+// Body Font
+$bodyFontStack: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$baseFontSize: 14px; // Henseforth known as 1em
+
+// Icons
+@font-face {
+  font-family: "icons";
+  src: url(' ../assets/icons.eot ');
+  src: url(' ../assets/icons.eot ?#iefix ') format("embedded-opentype"),
+       url(' ../assets/icons.woff ') format("woff"),
+       url(' ../assets/icons.ttf ') format("truetype"),
+       url(' ../assets/icons.svg #timber-icons ') format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+$socialIconFontStack: 'icons';

@@ -8,7 +8,7 @@ get '/' do
 end
 
 get '/:name' do
-  @styleguide = Kss::Parser.new('../scss')
+  @styleguide = Kss::Parser.new('../theme/test/sass')
   erb :"#{params[:name]}"
 end
 

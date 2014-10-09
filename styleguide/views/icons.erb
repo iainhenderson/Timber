@@ -3,19 +3,187 @@
 
 <div class="styleguide-pageIntro styleguide-pageCopy">
     <h1 class="styleguide-heading1"><%= @pageTitle %></h1>
-    <p>
-        These icons are getting automatically generated from any image that is in <code>theme/images/icons/*.png</code>.
-        This is automatically generat a SCSS file to: <code>screen/_generatedIconSprite.scss</code> and a raster sprite file to:
-        <code>themes/images/<sprite class="png"></sprite></code>
-    </p>
-    <p>
-        We use an Icon Block class to text replace and set the icons up. The modifier class (based on the file name) sets background position, width and size.
-    </p>
+    <p>Timber offers a basic icon font for social and payment icons. Import assets/icons.json into IcoMoon to make any changes to the set.</p>
+
+    <p>These icons are bulletproof, meaning they can have text fallbacks when @font-face isn't supported.</p>
 </div>
 
-<% styleguide_icon_block 'Icon' do %>
-    <i class="Icon $modifier_class"></i>
+<% styleguide_block 'Icons - IconFont' do %>
+    <ul class="inline-list icon-font-demo">
+    <li>
+      <div class="icon-fallback-text">
+        <span class="icon icon-american_express"></span>
+        <span class="fallback-text">American Express</span>
+      </div>
+    </li>
+    <li>
+      <div class="icon-fallback-text">
+        <span class="icon icon-visa"></span>
+        <span class="fallback-text">Visa</span>
+      </div>
+    </li>
+    <li>
+      <div class="icon-fallback-text">
+        <span class="icon icon-paypal"></span>
+        <span class="fallback-text">PayPal</span>
+      </div>
+    </li>
+    <li>
+      <div class="icon-fallback-text">
+        <span class="icon icon-discover"></span>
+        <span class="fallback-text">Discover</span>
+      </div>
+    </li>
+    <li>
+      <div class="icon-fallback-text">
+        <span class="icon icon-master"></span>
+        <span class="fallback-text">Master Card</span>
+      </div>
+    </li>
+    <li>
+      <div class="icon-fallback-text">
+        <span class="icon icon-stripe"></span>
+        <span class="fallback-text">Stripe</span>
+      </div>
+    </li>
+    <li>
+      <div class="icon-fallback-text">
+        <span class="icon icon-interac"></span>
+        <span class="fallback-text">Interac</span>
+      </div>
+    </li>
+    <li>
+      <div class="icon-fallback-text">
+        <span class="icon icon-cirrus"></span>
+        <span class="fallback-text">Cirrus</span>
+      </div>
+    </li>
+    <li>
+      <div class="icon-fallback-text">
+        <span class="icon icon-google_wallet"></span>
+        <span class="fallback-text">Google Wallet</span>
+      </div>
+    </li>
+    <li>
+      <div class="icon-fallback-text">
+        <span class="icon icon-dk"></span>
+        <span class="fallback-text">DK</span>
+      </div>
+    </li>
+    <li>
+      <div class="icon-fallback-text">
+        <span class="icon icon-jcb"></span>
+        <span class="fallback-text">JCB</span>
+      </div>
+    </li>
+    <li>
+      <div class="icon-fallback-text">
+        <span class="icon icon-maestro"></span>
+        <span class="fallback-text">Maestro</span>
+      </div>
+    </li>
+    <li>
+      <div class="icon-fallback-text">
+        <span class="icon icon-diners_club"></span>
+        <span class="fallback-text">Diners Club</span>
+      </div>
+    </li>
+    <li>
+      <div class="icon-fallback-text">
+        <span class="icon icon-bitcoin"></span>
+        <span class="fallback-text">Bitcoin</span>
+      </div>
+    </li>
+    </ul>
+
+    <hr class="hr--small">
+
+    <p>Social Icons</p>
+    <ul class="inline-list icon-font-demo">
+        <li>
+          <div class="icon-fallback-text">
+            <span class="icon icon-tumblr"></span>
+            <span class="fallback-text">Tumblr</span>
+          </div>
+        </li>
+        <li>
+          <div class="icon-fallback-text">
+            <span class="icon icon-vimeo"></span>
+            <span class="fallback-text">Vimeo</span>
+          </div>
+        </li>
+        <li>
+          <div class="icon-fallback-text">
+            <span class="icon icon-youtube"></span>
+            <span class="fallback-text">YouTube</span>
+          </div>
+        </li>
+        <li>
+          <div class="icon-fallback-text">
+            <span class="icon icon-google"></span>
+            <span class="fallback-text">Google</span>
+          </div>
+        </li>
+        <li>
+          <div class="icon-fallback-text">
+            <span class="icon icon-twitter"></span>
+            <span class="fallback-text">Twitter</span>
+          </div>
+        </li>
+        <li>
+          <div class="icon-fallback-text">
+            <span class="icon icon-facebook"></span>
+            <span class="fallback-text">Facebook</span>
+          </div>
+        </li>
+        <li>
+          <div class="icon-fallback-text">
+            <span class="icon icon-pinterest"></span>
+            <span class="fallback-text">Pinterest</span>
+          </div>
+        </li>
+        <li>
+          <div class="icon-fallback-text">
+            <span class="icon icon-instagram"></span>
+            <span class="fallback-text">Instagram</span>
+          </div>
+        </li>
+        <li>
+          <div class="icon-fallback-text">
+            <span class="icon icon-fancy"></span>
+            <span class="fallback-text">Fancy</span>
+          </div>
+        </li>
+        <li>
+          <div class="icon-fallback-text">
+            <span class="icon icon-rss"></span>
+            <span class="fallback-text">RSS</span>
+          
+            </div>
+        </li>
+    </ul>
+
+    <hr class="hr--small">
+
+    <p>General Icons</p>
+    <ul class="inline-list icon-font-demo">
+        <li>
+          <div class="icon-fallback-text">
+            <span class="icon icon-cart"></span>
+            <span class="fallback-text">Cart</span>
+          </div>
+        </li>
+        <li>
+          <div class="icon-fallback-text">
+            <span class="icon icon-arrow-down"></span>
+            <span class="fallback-text">Arrow Down</span>
+          </div>
+        </li>
+        <li>
+          <div class="icon-fallback-text">
+            <span class="icon icon-x"></span>
+            <span class="fallback-text">X</span>
+          </div>
+        </li>
+    </ul>
 <% end %>
-
-
-kss

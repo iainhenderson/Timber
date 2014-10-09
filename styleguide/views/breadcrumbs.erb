@@ -3,30 +3,19 @@
 
 <div class="styleguide-pageIntro styleguide-pageCopy">
     <h1 class="styleguide-heading1"><%= @pageTitle %></h1>
-    <p>
-        Breadcrumbs typically appear horizontally across the top of a Web page, often below title bars or headers. They provide links back to each previous page the user navigated through to get to the current page or—in hierarchical site structures—the parent pages of the current one.
-    </p>
-    <p>
-        Located at: <code>screen/blocks/_breadcrumbs.scss</code>.
-    </p>
+<p>Documentation - http://docs.shopify.com/support/your-website/navigation/creating-a-breadcrumb-navigation</p>
+<p>
+    The code lives in snippet/breadcrumb.</p>
 </div>
 
 <% styleguide_block 'Breadcrumbs' do %>
-<ol class="Breadcrumb">
-    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="Breadcrumb-item">
-        <a href="{{ siteUrl }}" itemprop="url">
-            <span itemprop="title">Home</span>
-        </a>
-    </li>
-    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="Breadcrumb-item">
-        <a href="{{ url('news') }}" itemprop="url">
-            <span itemprop="title">Section</span>
-        </a>
-    </li>
-    <li class="Breadcrumb-item is-current">
-        Current Page
-    </li>
-</ol>
+    <div class="breadcrumb">
+    <a href="#" title="Back to the frontpage">Home</a>
+    <span>»</span>
+       <a href="#" title="">Collection Name</a>
+    <span>»</span>
+    <span>Product Name</span>
+    </div>
 <% end %>
 
 

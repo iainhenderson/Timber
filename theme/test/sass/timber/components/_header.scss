@@ -1,0 +1,162 @@
+/*============================================================================
+  #Site Header
+==============================================================================*/
+.site-header {
+  padding: $gutter/2 0;
+
+  @include at-query ($min, $large) {
+    padding: $gutter 0;
+  }
+
+  @include at-query ($min, $large) {
+    .grid {
+      display: table;
+      table-layout: fixed;
+      width: 100%;
+
+      & > .grid-item {
+        float: none;
+        display: table-cell;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+.header-logo {
+  text-align: center;
+  font-size: em(40px);
+  margin: 0 auto $gutter/2;
+  max-width: 450px;
+
+  @include at-query ($min, $large) {
+    margin-bottom: 0;
+  }
+
+  a,
+  a:hover,
+  a:focus {
+    text-decoration: none;
+  }
+
+  a, img {
+    display: block;
+  }
+
+  img {
+    margin: 0 auto;
+  }
+}
+
+.site-header--text-links {
+  margin-bottom: 0;
+}
+
+.search-bar {
+  max-width: 100%;
+
+  @include at-query ($max, $medium) {
+    margin: 0 auto;
+  }
+}
+
+/*============================================================================
+  #Site Nav and Dropdowns
+==============================================================================*/
+.nav-bar {
+  background-color: $colorNav;
+
+  a {
+    color: $colorNavText;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: darken($colorNavText, 15%);
+    }
+  }
+
+  ul {
+    margin: 0;
+  }
+
+  li {
+    margin: 0;
+  }
+}
+
+.site-nav {
+  font-size: em(16px);
+  cursor: default;
+
+  li {
+    margin: 0;
+    display: block;
+  }
+
+  & > li {
+    position: relative;
+    display: inline-block;
+
+    &:first-child a {
+      padding-left: 0;
+    }
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+    padding: $gutter/2;
+    white-space: nowrap;
+  }
+
+  @include at-query ($max, $medium) {
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+.site-nav--active > a {
+  font-weight: bold;
+}
+
+/*================ Dropdowns ================*/
+.site-nav--dropdown {
+  display: none;
+  position: absolute;
+  left: 0;
+  z-index: 5;
+
+  .supports-no-touch .site-nav--has-dropdown:hover &,
+  .site-nav--has-dropdown.nav-hover &,
+  .nav-focus + & {
+    display: block;
+  }
+
+  a {
+    background-color: $colorNav;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: darken($colorNav, 10%);
+    }
+  }
+}
+
+/*================ Search bar in header ================*/
+.nav-search {
+  position: relative;
+  padding: 7px 0;
+
+  @include at-query ($max, $medium) {
+    padding: 0 0 $gutter/2;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .input-group,
+  .input-group-field {
+    margin-bottom: 0;
+  }
+}

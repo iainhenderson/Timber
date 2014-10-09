@@ -4,44 +4,22 @@
 <div class="styleguide-pageIntro styleguide-pageCopy">
     <h1 class="styleguide-heading1"><%= @pageTitle %></h1>
     <p>
-        Explain the context that this Component is used and the naming convension.
+        Use notes as helpers on forms, or brief messages to your customers.
     </p>
 </div>
 
-<% styleguide_block 'Global Alert' do %>
-<div class="GlobalBanner $modifier_class js-GlobalSiteBanner">
-    <div class="container">
-        <div class="GlobalBanner-message">
-            Warning this global banner is required.
-            <a href="#" class="GlobalBanner-dismiss js-closeBanner">&#215;</a>
-        </div>
-    </div>
-</div>
+<% styleguide_block 'Notes' do %>
+
+  <div class="note">
+    This is a message
+  </div>
+
+  <div class="note $modifier_class">
+    <p>This is a message.</p>
+    <ul class="disc">
+      <li>Bullets can offer more insight to the message</li>
+    </ul>
+  </div>
+
 <% end %>
 
-<% styleguide_block 'Alert' do %>
-<div class="Alert $modifier_class">
-    <span class="Alert-dismiss">
-        <i class="Icon Icon--remove">&#215;</i>
-    </span>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis inventore laboriosam minus nemo, omnis quaerat qui repellat sint tempora temporibus. Deserunt minus natus placeat quasi. Consectetur dolorem incidunt necessitatibus placeat.
-</div>
-<div class="Alert $modifier_class">
-    <span class="Alert-dismiss">
-        <i class="Icon Icon--remove">&#215;</i>
-    </span>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis inventore laboriosam minus nemo, omnis quaerat qui repellat sint tempora temporibus. Deserunt minus natus placeat quasi. Consectetur dolorem incidunt necessitatibus placeat.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis inventore laboriosam minus nemo, omnis quaerat qui repellat sint tempora temporibus. Deserunt minus natus placeat quasi. Consectetur dolorem incidunt necessitatibus placeat.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis inventore laboriosam minus nemo, omnis quaerat qui repellat sint tempora temporibus. Deserunt minus natus placeat quasi. Consectetur dolorem incidunt necessitatibus placeat.</p>
-</div>
-<div class="Alert $modifier_class">
-    <span class="Alert-dismiss">
-        <i class="Icon Icon--remove">&#215;</i>
-    </span>
-    <ul>
-    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis inventore laboriosam minus nemo, omnis quaerat qui repellat sint tempora temporibus. Deserunt minus natus placeat quasi. Consectetur dolorem incidunt necessitatibus placeat.</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis inventore laboriosam minus nemo, omnis quaerat qui repellat sint tempora temporibus. Deserunt minus natus placeat quasi. Consectetur dolorem incidunt necessitatibus placeat.</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis inventore laboriosam minus nemo, omnis quaerat qui repellat sint tempora temporibus. Deserunt minus natus placeat quasi. Consectetur dolorem incidunt necessitatibus placeat.</li>
-    </ul>
-</div>
-<% end %>
