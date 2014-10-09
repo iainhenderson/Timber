@@ -1,0 +1,212 @@
+<main class="wrapper main-content" role="main">
+    <nav class="breadcrumb" role="navigation" aria-label="breadcrumbs">
+        <a href="/" title="Back to the frontpage">Home</a>
+        <span aria-hidden="true">›</span>
+        <span>Collection 1</span>
+    </nav>
+    <div class="grid">
+        <div class="grid-item large--one-quarter">
+            <h3>Product Types</h3>
+            <ul>
+                <li>
+                    <a href="/collections/types?q=Jeans" title="Jeans">Jeans</a>
+                </li>
+                <li>
+                    <a href="/collections/types?q=Shorts" title="Shorts">Shorts</a>
+                </li>
+            </ul>
+            <h3>Vendors</h3>
+            <ul>
+                <li>
+                    <a href="/collections/vendors?q=True%20Religion" title="True Religion">True Religion</a>
+                </li>
+            </ul>
+            <h3>Tags</h3>
+            <ul>
+                <li class="active-filter">
+                    <a href="/collections/collection-1">All Collection 1</a>
+                </li>
+                <li>
+                    <a title="Show products matching tag $200 - $250" href="/collections/collection-1/200-250">$200 - $250</a>
+                </li>
+                <li>
+                    <a title="Show products matching tag $250 +" href="/collections/collection-1/250">$250 +</a>
+                </li>
+                <li>
+                    <a title="Show products matching tag 23" href="/collections/collection-1/23">23</a>
+                </li>
+                <li>
+                    <a title="Show products matching tag 24" href="/collections/collection-1/24">24</a>
+                </li>
+                <li>
+                    <a title="Show products matching tag 26" href="/collections/collection-1/26">26</a>
+                </li>
+                <li>
+                    <a title="Show products matching tag 28" href="/collections/collection-1/28">28</a>
+                </li>
+                <li>
+                    <a title="Show products matching tag 29" href="/collections/collection-1/29">29</a>
+                </li>
+                <li>
+                    <a title="Show products matching tag 30" href="/collections/collection-1/30">30</a>
+                </li>
+                <li>
+                    <a title="Show products matching tag 31" href="/collections/collection-1/31">31</a>
+                </li>
+                <li>
+                    <a title="Show products matching tag 32" href="/collections/collection-1/32">32</a>
+                </li>
+                <li>
+                    <a title="Show products matching tag 33" href="/collections/collection-1/33">33</a>
+                </li>
+                <li>
+                    <a title="Show products matching tag 34" href="/collections/collection-1/34">34</a>
+                </li>
+                <li>
+                    <a title="Show products matching tag 35" href="/collections/collection-1/35">35</a>
+                </li>
+            </ul>
+        </div>
+        <div class="grid-item large--three-quarters">
+            <header class="section-header">
+                <h1 class="section-header--title">Collection 1</h1>
+                <div class="rte rte--header">
+                    This is the description for <strong>Collection 1</strong>.
+                </div>
+            </header>
+            <hr>
+            <div class="section-header">
+                <div class="section-header--right">
+                    <div class="form-horizontal">
+                        <label for="sortBy">Sort by</label>
+                        <select name="sortBy" id="sortBy">
+                            <option value="manual">Featured</option>
+                            <option value="best-selling">Best Selling</option>
+                            <option value="title-ascending">Alphabetically, A-Z</option>
+                            <option value="title-descending">Alphabetically, Z-A</option>
+                            <option value="price-ascending">Price, low to high</option>
+                            <option value="price-descending">Price, high to low</option>
+                            <option value="created-descending">Date, new to old</option>
+                            <option value="created-ascending">Date, old to new</option>
+                        </select>
+                    </div>
+                    <script>
+                        /*============================================================================
+                          Inline JS because collection liquid object is only available
+                          on collection pages, and not external JS files
+                        ==============================================================================*/
+                        Shopify.queryParams = {};
+                        if (location.search.length) {
+                          for (var aKeyValue, i = 0, aCouples = location.search.substr(1).split('&'); i < aCouples.length; i++) {
+                            aKeyValue = aCouples[i].split('=');
+                            if (aKeyValue.length > 1) {
+                              Shopify.queryParams[decodeURIComponent(aKeyValue[0])] = decodeURIComponent(aKeyValue[1]);
+                            }
+                          }
+                        }
+                        
+                        $(function() {
+                          $('#sortBy')
+                            .val('manual')
+                            .bind('change', function() {
+                              Shopify.queryParams.sort_by = jQuery(this).val();
+                              location.search = jQuery.param(Shopify.queryParams);
+                            }
+                          );
+                        });
+                    </script>
+                    <div class="collection-view">
+                        <a title="Grid view" class="change-view collection-view--active" data-view="grid">
+                        <img src="//cdn.shopify.com/s/files/1/0383/9765/t/3/assets/collection-view-grid.svg?16085" alt="Grid View">
+                        </a>
+                        <a title="List view" class="change-view" data-view="list">
+                        <img src="//cdn.shopify.com/s/files/1/0383/9765/t/3/assets/collection-view-list.svg?16085" alt="List View">
+                        </a>
+                    </div>
+                    <script>
+                        function replaceUrlParam(url, paramName, paramValue) {
+                          var pattern = new RegExp('('+paramName+'=).*?(&|$)'),
+                              newUrl = url.replace(pattern,'$1' + paramValue + '$2');
+                          if ( newUrl == url ) {
+                            newUrl = newUrl + (newUrl.indexOf('?')>0 ? '&' : '?') + paramName + '=' + paramValue;
+                          }
+                          return newUrl;
+                        }
+                        
+                        $(function() {
+                          $('.change-view').on('click', function() {
+                            var view = $(this).data('view'),
+                                url = document.URL,
+                                hasParams = url.indexOf('?') > -1;
+                        
+                            if (hasParams) {
+                              window.location = replaceUrlParam(url, 'view', view);
+                            } else {
+                              window.location = url + '?view=' + view;
+                            }
+                          });
+                        });
+                    </script>
+                </div>
+            </div>
+            <div class="grid-uniform">
+                <div class="grid-item large--one-third medium--one-half on-sale">
+                    <a href="/collections/collection-1/products/bjml-mystic-water-clean" class="grid-image">
+                    <img src="//cdn.shopify.com/s/files/1/0383/9765/products/10427_bjml_mystic_water_clean_l_z_large.jpeg?v=1401811032" alt="Bjml Mystic Water Clean">
+                    </a>
+                    <p class="h6">
+                        <a href="/collections/collection-1/products/bjml-mystic-water-clean">Bjml Mystic Water Clean</a>
+                    </p>
+                    <p>
+                        $257.40
+                        <br><strong>On Sale</strong> from $365.99
+                    </p>
+                </div>
+                <div class="grid-item large--one-third medium--one-half">
+                    <a href="/collections/collection-1/products/bobby-straight-recycled-renegade-mens-jean" class="grid-image">
+                    <img src="//cdn.shopify.com/s/files/1/0383/9765/products/002a_large.jpeg?v=1401811042" alt="BOBBY RENEGADE MENS JEAN">
+                    </a>
+                    <p class="h6">
+                        <a href="/collections/collection-1/products/bobby-straight-recycled-renegade-mens-jean">BOBBY RENEGADE MENS JEAN</a>
+                    </p>
+                    <p>
+                        $257.40
+                    </p>
+                </div>
+                <div class="grid-item large--one-third medium--one-half">
+                    <a href="/collections/collection-1/products/chrissy-super-skinny-29-printed-womens-jean" class="grid-image">
+                    <img src="//cdn.shopify.com/s/files/1/0383/9765/products/10429_axj_paisley_l_z_large.jpeg?v=1401811051" alt="CHRISSY SUPER SKINNY WOMENS JEAN">
+                    </a>
+                    <p class="h6">
+                        <a href="/collections/collection-1/products/chrissy-super-skinny-29-printed-womens-jean">CHRISSY SUPER SKINNY WOMENS JEAN</a>
+                    </p>
+                    <p>
+                        $257.40
+                    </p>
+                </div>
+                <div class="grid-item large--one-third medium--one-half">
+                    <a href="/collections/collection-1/products/geno-slim-straight-mens-jean" class="grid-image">
+                    <img src="//cdn.shopify.com/s/files/1/0383/9765/products/10504_lt_antelope_l_z_large.jpeg?v=1401811101" alt="GENO SLIM STRAIGHT MENS JEAN">
+                    </a>
+                    <p class="h6">
+                        <a href="/collections/collection-1/products/geno-slim-straight-mens-jean">GENO SLIM STRAIGHT MENS JEAN</a>
+                    </p>
+                    <p>
+                        $322.40
+                    </p>
+                </div>
+                <div class="grid-item large--one-third medium--one-half">
+                    <a href="/collections/collection-1/products/joey-low-rise-denim-cut-off-womens-short" class="grid-image">
+                    <img src="//cdn.shopify.com/s/files/1/0383/9765/products/10430_axal_breezy_meadow_b_z_large.jpeg?v=1401811123" alt="JOEY LOW RISE DENIM CUT OFF WOMENS SHORT">
+                    </a>
+                    <p class="h6">
+                        <a href="/collections/collection-1/products/joey-low-rise-denim-cut-off-womens-short">JOEY LOW RISE DENIM CUT OFF WOMENS SHORT</a>
+                    </p>
+                    <p>
+                        $231.40
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

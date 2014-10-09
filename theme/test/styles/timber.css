@@ -2553,6 +2553,11 @@ Styleguide Pagination
   border-bottom-right-radius: 3px;
 }
 
+/*
+Site Header
+
+Styleguide Site Header
+*/
 /*============================================================================
   #Site Header
 ==============================================================================*/
@@ -2698,9 +2703,11 @@ Styleguide Pagination
   margin-bottom: 0;
 }
 
-/*============================================================================
-  #Site Footer
-==============================================================================*/
+/*
+Site Footer
+
+Styleguide Site Footer
+*/
 .site-footer {
   background-color: #f2f2f2;
   border-top: 1px solid #e5e5e5;

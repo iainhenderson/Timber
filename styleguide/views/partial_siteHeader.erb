@@ -1,0 +1,69 @@
+<header class="site-header" role="banner">
+    <div class="wrapper">
+        <div class="grid--full">
+            <div class="grid-item large--one-half">
+                <h1 class="header-logo large--left" itemscope="" itemtype="http://schema.org/Organization">
+                    <a href="/" itemprop="url">Timber Demo Theme</a>
+                </h1>
+            </div>
+            <div class="grid-item large--one-half text-center large--text-right">
+                <a href="/cart" id="cartToggle">
+                Cart
+                (<span id="cartCount">0</span>
+                items
+                <span id="cartCost">$0.00</span>)
+                </a>
+                <p class="site-header--text-links">
+                    <a href="/account/login" id="customer_login_link">Log in</a>
+                    | <a href="/account/register" id="customer_register_link">Create account</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</header>
+<nav class="nav-bar" role="navigation">
+    <div class="wrapper">
+        <div class="grid">
+            <div class="grid-item large--two-thirds">
+                <ul class="site-nav" id="accessibleNav">
+                    <li class="site-nav--active">
+                        <a href="/">Home</a>
+                    </li>
+                    <li class="site-nav--has-dropdown" aria-haspopup="true">
+                        <a href="/collections/all">Catalog</a>
+                        <ul class="site-nav--dropdown">
+                            <li><a href="/collections/collection-1">Collection 1</a>
+                            </li>
+                            <li><a href="/collections/collection-2">Collection 2</a>
+                            </li>
+                            <li><a href="/collections/collection-3">Collection 3</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/blogs/news">Blog</a>
+                    </li>
+                    <li>
+                        <a href="/pages/about-us">About Us</a>
+                    </li>
+                    <li>
+                        <a href="/pages/contact-us">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="grid-item large--one-third">
+                <div class="nav-search">
+                    <form action="/search" method="get" class="input-group search-bar" role="search">
+                        <input type="search" name="q" value="" placeholder="Search our store" class="input-group-field" aria-label="Search our store">
+                        <span class="input-group-btn">
+                        <button type="submit" class="btn icon-fallback-text">
+                        <span class="icon icon-search" aria-hidden="true"></span>
+                        <span class="fallback-text">Search</span>
+                        </button>
+                        </span>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

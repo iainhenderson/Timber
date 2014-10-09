@@ -1,0 +1,15 @@
+<% pageSection 'Component Groups' %>
+<% pageTitle 'Site Header' %>
+
+<div class="styleguide-pageIntro styleguide-pageCopy">
+    <h1 class="styleguide-heading1"><%= @pageTitle %></h1>
+    <p>
+        Explain the context that this Component is used and the naming convension.
+    </p>
+</div>
+
+<% styleguide_block 'Site Header' do %>
+
+<%= erb :partial_siteHeader, :layout => false %>
+
+<% end %>

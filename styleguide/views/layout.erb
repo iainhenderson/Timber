@@ -6,13 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <title><%= @pageTitle %> : <%= @clientName %> Styleguide</title>
+   
+
+    
     <link rel="stylesheet" href="/styleguide/public/layout.css" type="text/css"/>
-    <script src="/styleguide/public/jquery-2.0.3.min.js" ></script>
-    <script src="/theme/test/assets/modernizr.min.js" ></script>
     <link rel="stylesheet" href="/theme/test/styles/timber.css" type="text/css"/>
-    <link rel="shortcut icon" href="/styleguide/public/favicon.ico?v=1" />
+    <link rel="stylesheet" href="/theme/test/styles/ajaxify.css" type="text/css"/>
+    <link rel="stylesheet" href="/theme/test/styles/checkout.css" type="text/css"/>
     <link rel="stylesheet" href="/bower_components/prism/themes/prism.css" type="text/css"/>
     <link  href="/bower_components/prism/plugins/line-numbers/prism-line-numbers.css" type="text/css" rel="stylesheet" />
+
+    <link rel="shortcut icon" href="/styleguide/public/favicon.ico?v=1" />
+    
+    <script>
+    //<![CDATA[
+          var Shopify = Shopify || {};
+          Shopify.shop = "timber-demo.myshopify.com";
+          Shopify.theme = {"name":"Timber","id":8216141,"theme_store_id":null,"role":"main"};
+
+    //]]>
+    </script>
+
+
+    <script id="__st">
+    //<![CDATA[
+    var __st={"a":3839765,"offset":-14400,"reqid":"cc098710-98f1-4111-b378-8fc841d3d9df","pageurl":"timber-demo.myshopify.com/products/ricky-straight-super-t-mens-jean","s":"products-325061245","t":"lead","u":"963b4d8352c1","p":"product","rtyp":"product","rid":325061245};
+    //]]>
+    </script>
+    <script>
+    //<![CDATA[
+        (function() {
+          function asyncLoad() {
+            var urls = ["//cdn.shopify.com/s/javascripts/shopify_stats.js?v=6"];
+            for (var i = 0; i < urls.length; i++) {
+              var s = document.createElement('script');
+              s.type = 'text/javascript';
+              s.async = true;
+              s.src = urls[i];
+              var x = document.getElementsByTagName('script')[0];
+              x.parentNode.insertBefore(s, x);
+            }
+          }
+          window.attachEvent ? window.attachEvent('onload', asyncLoad) : window.addEventListener('load', asyncLoad, false);
+        })();
+
+    //]]>
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <script src="/theme/test/assets/respond.min.js?16085" type="text/javascript"></script>
+    <link href="/theme/test/assets/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+    <link href="//timber-demo.myshopify.com/search?q=e5edfa95bb7e06666c084df091a78cc9" id="respond-redirect" rel="respond-redirect" />
+    <script src="//timber-demo.myshopify.com/search?q=e5edfa95bb7e06666c084df091a78cc9" type="text/javascript"></script>
+    <![endif]-->
+    
+    <script src="/styleguide/public/jquery-2.0.3.min.js" ></script>
+    <script src="/theme/test/assets/modernizr.min.js" ></script>
+
 </head>
 
 <body class="styleguide-Body styleguide-section-<%= @pageSection.delete(' ') %> styleguide-page-<%= @pageTitle.delete(' ') %>">
@@ -40,5 +91,112 @@
 
 <script src="/styleguide/public/kss.js"></script>
 
+<script src="/theme/test/assets/shop.js" type="text/javascript"></script>
+
+<script src="/theme/test/assets/handlebars.min.js" type="text/javascript"></script>
+  
+  <script id="cartTemplate" type="text/template">
+  
+    <form action="/cart" method="post" novalidate>
+      <div class="ajaxcart__inner">
+        {{#items}}
+        <div class="ajaxcart__product">
+          <div class="ajaxcart__row" data-id="{{id}}">
+            <div class="grid">
+              <div class="grid-item large--two-thirds">
+                <div class="grid">
+                  <div class="grid-item one-quarter">
+                    <a href="{{url}}" class="ajaxcart__product-image"><img src="{{img}}" alt=""></a>
+                  </div>
+                  <div class="grid-item three-quarters">
+                    <a href="{{url}}" class="h4">{{name}}</a>
+                    <p>{{variation}}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-item large--one-third">
+                <div class="grid">
+                  <div class="grid-item one-third">
+                    <div class="ajaxcart__qty">
+                      <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--minus" data-id="{{id}}" data-qty="{{itemMinus}}">&minus;</button>
+                      <input type="text" class="ajaxcart__qty-num" value="{{itemQty}}" min="0" data-id="{{id}}" aria-label="quantity" pattern="[0-9]*">
+                      <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--plus" data-id="{{id}}" data-qty="{{itemAdd}}">+</button>
+                    </div>
+                  </div>
+                  <div class="grid-item one-third text-center">
+                    <p>{{price}}</p>
+                  </div>
+                  <div class="grid-item one-third text-right">
+                    <p>
+                      <small><a href="/cart/change?id={{id}}&amp;quantity=0" class="ajaxcart__remove" data-id="{{id}}">Remove</a></small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{/items}}
+      </div>
+      <div class="ajaxcart__row text-right medium-down--text-center">
+        <span class="h3">Subtotal {{totalPrice}}</span>
+        <input type="submit" class="{{btnClass}}" name="checkout" value="Checkout">
+      </div>
+    </form>
+  
+  </script>
+  <script id="drawerTemplate" type="text/template">
+  
+    <div id="ajaxifyDrawer" class="ajaxcart ajaxcart--drawer">
+      <div id="ajaxifyCart" class="ajaxcart__content {{wrapperClass}}"></div>
+    </div>
+  
+  </script>
+  <script id="modalTemplate" type="text/template">
+  
+    <div id="ajaxifyModal" class="ajaxcart ajaxcart--modal">
+      <div id="ajaxifyCart" class="ajaxcart__content"></div>
+    </div>
+  
+  </script>
+  <script id="ajaxifyQty" type="text/template">
+  
+    <div class="ajaxcart__qty">
+      <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--minus" data-id="{{id}}" data-qty="{{itemMinus}}">&minus;</button>
+      <input type="text" class="ajaxcart__qty-num" value="{{itemQty}}" min="0" data-id="{{id}}" aria-label="quantity" pattern="[0-9]*">
+      <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--plus" data-id="{{id}}" data-qty="{{itemAdd}}">+</button>
+    </div>
+  
+  </script>
+  <script id="jsQty" type="text/template">
+  
+    <div class="js-qty">
+      <button type="button" class="js-qty__adjust js-qty__adjust--minus" data-id="{{id}}" data-qty="{{itemMinus}}">&minus;</button>
+      <input type="text" class="js-qty__num" value="{{itemQty}}" min="1" data-id="{{id}}" aria-label="quantity" pattern="[0-9]*" name="{{inputName}}" id="{{inputId}}">
+      <button type="button" class="js-qty__adjust js-qty__adjust--plus" data-id="{{id}}" data-qty="{{itemAdd}}">+</button>
+    </div>
+  
+  </script>
+
+  <script src="/theme/test/assets/ajaxify.js?16085" type="text/javascript"></script>
+  <script>
+  jQuery(function($) {
+    ajaxifyShopify.init({
+      method: 'Drawer',
+      wrapperClass: 'wrapper',
+      formSelector: '#addToCartForm',
+      addToCartSelector: '#addToCart',
+      cartCountSelector: '#cartCount',
+      cartCostSelector: '#cartCost',
+      toggleCartButton: '#cartToggle',
+      useCartTemplate: true,
+      btnClass: 'btn',
+      moneyFormat: "${{amount}}",
+      disableAjaxCart: false,
+      enableQtySelectors: true,
+      prependDrawerTo: 'body'
+    });
+  });
+  </script>
 </body>
 </html>
