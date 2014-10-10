@@ -354,7 +354,15 @@ pre {
   margin: 0 0 $gutter;
 }
 
-/*================ Horizontal Rules ================*/
+/*
+Separtors
+
+.hr--small - Smaller Margins
+.hr--clear - Invisible
+
+Styleguide Separators
+
+*/
 hr {
   clear: both;
   border-top: solid $colorBorder;
@@ -1618,7 +1626,9 @@ Styleguide Icons - IconFont
     }
   }
 }
-
+.icon-font-demo {
+  font-size:42px;
+}
 /*
 The grid is coloured for demonstration only.
 

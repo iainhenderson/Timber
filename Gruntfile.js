@@ -95,9 +95,14 @@ module.exports = function(grunt) {
             //     files: ['bower.json'],
             //     tasks: ['wiredep']
             // },
-            scss: {
-                files: ['assets/timber.scss.liquid'],
-                tasks: ['copy:liquidsass', 'liquid', 'sass', 'autoprefixer:src']
+            sass: {
+                files: ['<%= config.srcDir %>/sass/**/*'],
+                tasks: [
+                    'liquid',
+                    'concat:testTimberSass',
+                    'sass:test',
+                    'autoprefixer:test'
+                ]
             }
         },
 
@@ -122,22 +127,8 @@ module.exports = function(grunt) {
                 {
                     expand: true, 
                     flatten: true,
-                    cwd: '<%= config.srcDir %>/scripts/',
-                    src: ['**/*'],
-                    dest: '<%= config.testDir %>/assets'
-                },
-                {
-                    expand: true, 
-                    flatten: true,
-                    cwd: '<%= config.srcDir %>/images/',
-                    src: ['**/*'],
-                    dest: '<%= config.testDir %>/assets'
-                },
-                {
-                    expand: true, 
-                    flatten: true,
-                    cwd: '<%= config.srcDir %>/fonts/',
-                    src: ['**/*'],
+                    cwd: '<%= config.srcDir %>/',
+                    src: ['scripts/**/*','images/**/*', 'fonts/**/*'],
                     dest: '<%= config.testDir %>/assets'
                 },
                 {
@@ -167,6 +158,52 @@ module.exports = function(grunt) {
                     cwd: '<%= config.srcDir %>/templates/',
                     src: ['**/*'],
                     dest: '<%= config.testDir %>/templates/'
+                },
+                ]
+            },
+            srcToDist: {
+                files: [
+                {
+                    expand: true, 
+                    flatten: false,
+                    cwd: '<%= config.srcDir %>/sass/',
+                    src: ['**/*'],
+                    dest: '<%= config.distDir %>/sass/'
+                },
+                {
+                    expand: true, 
+                    flatten: true,
+                    cwd: '<%= config.srcDir %>/',
+                    src: ['scripts/**/*','images/**/*', 'fonts/**/*'],
+                    dest: '<%= config.distDir %>/assets'
+                },
+                {
+                    expand: true, 
+                    flatten: true,
+                    cwd: '<%= config.srcDir %>/config/',
+                    src: ['**/*'],
+                    dest: '<%= config.distDir %>/config'
+                },
+                {
+                    expand: true, 
+                    flatten: true,
+                    cwd: '<%= config.srcDir %>/layout/',
+                    src: ['**/*'],
+                    dest: '<%= config.distDir %>/layout'
+                },
+                {
+                    expand: true, 
+                    flatten: true,
+                    cwd: '<%= config.srcDir %>/snippets/',
+                    src: ['**/*'],
+                    dest: '<%= config.distDir %>/snippets'
+                },
+                {
+                    expand: true, 
+                    flatten: false,
+                    cwd: '<%= config.srcDir %>/templates/',
+                    src: ['**/*'],
+                    dest: '<%= config.distDir %>/templates/'
                 },
                 ]
             }
@@ -206,6 +243,19 @@ module.exports = function(grunt) {
                     }
                 ]
             },
+            distTimberSass: {
+                files: [
+                     {   
+                        expand: true,
+                        cwd:  '<%= config.distDir %>/sass/timber/',
+                        src: config.timberSass,
+                        dest: '<%= config.distDir %>/sass/timber.scss',
+                        rename: function (dest, src) {
+                            return dest;
+                        }
+                    }
+                ]
+            },
         },
 
         // Compile Scss
@@ -232,12 +282,20 @@ module.exports = function(grunt) {
             options: {
                 browsers: ['last 3 version']
             },
-            src: {
+            test: {
                 files: [{
                     expand: true,
-                    cwd: 'styleguide/public/styles',
+                    cwd: '<%= config.testDir %>/styles/',
                     src: '{,*/}*.css',
-                    dest: 'styleguide/public/styles'
+                    dest: '<%= config.testDir %>/styles/'
+                }]
+            },
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= config.distDir %>/styles/',
+                    src: '{,*/}*.css',
+                    dest: '<%= config.distDir %>/styles/'
                 }]
             }
         },
@@ -253,13 +311,14 @@ module.exports = function(grunt) {
         'liquid',
         'concat:testTimberSass',
         'sass:test',
+        'autoprefixer:test'
     ]);
 
     grunt.registerTask('build', [
-        'copy:liquidsass', 
-        'liquid', 
-        'sass', 
-        'autoprefixer:src'
+        'clean:dist',
+        'copy:srcToDist', 
+        'concat:distTimberSass',
+        'autoprefixer:dist'
     ]);
 
 };

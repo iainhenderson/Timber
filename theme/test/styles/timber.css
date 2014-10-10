@@ -178,7 +178,15 @@ pre {
   margin: 0 0 24px;
 }
 
-/*================ Horizontal Rules ================*/
+/*
+Separtors
+
+.hr--small - Smaller Margins
+.hr--clear - Invisible
+
+Styleguide Separators
+
+*/
 hr {
   clear: both;
   border-top: solid #e5e5e5;
@@ -2451,6 +2459,10 @@ Styleguide Icons - IconFont
 }
 .social-icons li a:hover {
   color: #a2a2a2;
+}
+
+.icon-font-demo {
+  font-size: 42px;
 }
 
 /*

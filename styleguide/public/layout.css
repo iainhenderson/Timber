@@ -282,6 +282,7 @@ h1.styleguide {
 
 .styleguide-codeblock.styleguide-code-is-collapsed {
     max-height:114px;
+    overflow-y:hidden;
 }
 
 .styleguide-codeblock-button {
