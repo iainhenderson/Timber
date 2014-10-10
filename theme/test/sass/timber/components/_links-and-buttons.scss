@@ -4,11 +4,7 @@ Links and Buttons
 Styleguide - Links
 */
 
-/*
-Buttons
 
-Styleguide Buttons
-*/
 
 a {
   color: $colorLink;
@@ -20,6 +16,21 @@ a:hover,
 a:focus {
   color: $colorLinkHover;
 }
+
+/*
+Buttons
+
+.btn--small - Small Primary Button
+.btn--large - Large Primary Button
+.btn--full - Full width Primary Button
+.disabled - Disabled Primary Button
+.btn-secondary.btn--small - Small Secondary Button
+.btn-secondary.btn--large - Large Secondary Button
+.btn-secondary.btn--full - Full width Secondary Button
+.btn-secondary.disabled - Disabled Secondary Button
+
+Styleguide Buttons
+*/
 
 button {
   overflow: visible;
